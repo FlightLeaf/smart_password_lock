@@ -1,0 +1,156 @@
+/*
+
+Xilinx Vivado v2021.1 (64-bit) [Major: 2021, Minor: 1]
+SW Build: 3247384 on Thu Jun 10 19:36:33 MDT 2021
+IP Build: 3246043 on Fri Jun 11 00:30:35 MDT 2021
+
+Process ID (PID): 8064
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu Oct 19 22:39:33 CST 2023
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1600
+Screen resolution (DPI): 150
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=18
+Scale size: 27
+
+Java version: 	11.0.2 64-bit
+Java home: 	D:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2
+Java executable: 	D:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Leaf
+User home directory: C:/Users/Leaf
+User working directory: D:/Desktop/smart_password_lock
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2021.1
+RDI_DATADIR: D:/Xilinx/Vivado/2021.1/data
+RDI_BINDIR: D:/Xilinx/Vivado/2021.1/bin
+
+Vivado preferences file: C:/Users/Leaf/AppData/Roaming/Xilinx/Vivado/2021.1/vivado.xml
+Vivado preferences directory: C:/Users/Leaf/AppData/Roaming/Xilinx/Vivado/2021.1/
+Vivado layouts directory: C:/Users/Leaf/AppData/Roaming/Xilinx/Vivado/2021.1/data/layouts
+PlanAhead jar file: 	D:/Xilinx/Vivado/2021.1/lib/classes/planAhead.jar
+Vivado log file: 	D:/Desktop/smart_password_lock/vivado.log
+Vivado journal file: 	D:/Desktop/smart_password_lock/vivado.jou
+Engine tmp dir: 	D:/Desktop/smart_password_lock/.Xil/Vivado-8064-xiaoxin
+
+Xilinx Environment Variables
+----------------------------
+ANDROID_SDK_HOME: D:\Android\android-sdk\
+XILINX: D:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_HLS: D:/Xilinx/Vitis_HLS/2021.1
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2021.1
+XILINX_VIVADO: D:/Xilinx/Vivado/2021.1
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2021.1
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,152 MB
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: D:\Desktop\smart_password_lock\smart_password_lock.xpr. Version: Vivado v2021.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project D:/Desktop/smart_password_lock/smart_password_lock.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,152 MB. GUI used memory: 72 MB. Current time: 10/19/23, 10:39:34 PM CST
+// Tcl Message: open_project D:/Desktop/smart_password_lock/smart_password_lock.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/Desktop/verilog/smart_password_lock' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 92 MB (+93814kb) [00:00:16]
+// [Engine Memory]: 1,152 MB (+1056098kb) [00:00:16]
+// [GUI Memory]: 113 MB (+17703kb) [00:00:17]
+// WARNING: HEventQueue.dispatchEvent() is taking  5093 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2021.1/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1135.898 ; gain = 0.000 
+// Project name: smart_password_lock; location: D:/Desktop/smart_password_lock; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 155 MB (+37569kb) [00:00:36]
+// Elapsed time: 13 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v)]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+// Launch External Editor: 'cmd /S /k "code -g "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/KeyValue.v":9"'
+// Elapsed time: 22 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v)]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v), frequency_division : frequency_division (frequency_division.v)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v), frequency_division : frequency_division (frequency_division.v)]", 2, false, false, false, false, false, true); // D - Double Click
+// Launch External Editor: 'cmd /S /k "code -g "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_division.v":23"'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v), u0 : KeyPress (KeyPress.v)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KeyValue (KeyValue.v), u0 : KeyPress (KeyPress.v)]", 3, false, false, false, false, false, true); // D - Double Click
+// Launch External Editor: 'cmd /S /k "code -g "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/KeyPress.v":9"'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE

@@ -7,18 +7,18 @@
 //时间:2021-4-24
 //***************************************************************************
 module KeyPress(
-	CLK,
-	nRST,
-	KEY_IN,
-	KEY_FLAG,
-	KEY_STATE
+	clk,
+	reset,
+	key_in,
+	key_flag,
+	key_state
 );
-	input CLK;
-	input nRST;
-	input KEY_IN;
+	input clk;
+	input reset;
+	input key_in;
 	
-	output reg KEY_FLAG;			//按键按下标志位 高电平为按下
-	output reg KEY_STATE;
+	output reg key_flag;			//按键按下标志位 高电平为按下
+	output reg key_state;
 	
 	reg key_a, key_b;
 	reg en_cnt, cnt_full;
@@ -35,23 +35,23 @@ module KeyPress(
 		Filter_Down2Up	=	4'b1000;
 		
 	//======判断按键输入信号跳变沿========//
-	always @(posedge CLK or negedge nRST)
-		if(!nRST)
+	always @(posedge clk or negedge reset)
+		if(!reset)
 			begin
 				key_a <= 1'b0;
 				key_b <= 1'b0;
 			end
 		else
 			begin
-				key_a <= KEY_IN;
+				key_a <= key_in;
 				key_b <= key_a;
 			end
 	assign flag_H2L = key_b && (!key_a);
 	assign flag_L2H = (!key_b) && key_a;
 	
 	//============计数使能模块==========//
-	always @(posedge CLK or negedge nRST)
-		if(!nRST)
+	always @(posedge clk or negedge reset)
+		if(!reset)
 			cnt <= 1'b0;
 		else if(en_cnt)
 			cnt <= cnt + 1'b1;
@@ -59,8 +59,8 @@ module KeyPress(
 			cnt <= 1'b0;
 			
 	//=============计数模块=============//
-	always @(posedge CLK or negedge nRST)
-		if(!nRST)
+	always @(posedge clk or negedge reset)
+		if(!reset)
 			cnt_full <= 1'b0;
 		else if(cnt == 20'd999_999)
 			cnt_full <= 1'b1;
@@ -68,19 +68,19 @@ module KeyPress(
 			cnt_full <= 1'b0;
 	
 	//=============有限状态机============//
-	always @(posedge CLK or negedge nRST)
-		if(!nRST)
+	always @(posedge clk or negedge reset)
+		if(!reset)
 			begin
 				en_cnt <= 1'b0;
 				state <= Key_up;
-				KEY_FLAG <= 1'b0;
-				KEY_STATE <= 1'b1;
+				key_flag <= 1'b0;
+				key_state <= 1'b1;
 			end
 		else
 			case(state)
 				//保持没按
 				Key_up: begin 
-					KEY_FLAG <= 1'b0;
+					key_flag <= 1'b0;
 					if(flag_H2L) begin
 						state <= Filter_Up2Down;
 						en_cnt <= 1'b1;
@@ -93,8 +93,8 @@ module KeyPress(
 					if(cnt_full) begin
 						en_cnt <= 1'b0;
 						state <= Key_down;
-						KEY_STATE <= 1'b0;
-						KEY_FLAG <= 1'b1;
+						key_state <= 1'b0;
+						key_flag <= 1'b1;
 					end
 					else if(flag_L2H) begin
 						en_cnt <= 1'b0;
@@ -105,7 +105,7 @@ module KeyPress(
 				end
 				//保持按下状态
 				Key_down: begin
-					KEY_FLAG <= 1'b0;
+					key_flag <= 1'b0;
 					if(flag_L2H) begin
 						state <= Filter_Down2Up;
 						en_cnt <= 1'b1;
@@ -118,8 +118,8 @@ module KeyPress(
 					if(cnt_full) begin
 						en_cnt <= 1'b0;
 						state <= Key_up;
-						KEY_FLAG <= 1'b1;
-						KEY_STATE <= 1'b1;
+						key_flag <= 1'b1;
+						key_state <= 1'b1;
 					end
 					else if(flag_H2L) begin
 						en_cnt <= 1'b0;
@@ -132,8 +132,8 @@ module KeyPress(
 				default: begin
 					en_cnt <= 1'b0;
 					state <= Key_up;
-					KEY_FLAG <= 1'b0;
-					KEY_STATE <= 1'b1;
+					key_flag <= 1'b0;
+					key_state <= 1'b1;
 				end
 			endcase	
 endmodule

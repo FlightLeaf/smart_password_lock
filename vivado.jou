@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Oct 19 22:39:13 2023
+# Process ID: 8064
+# Current directory: D:/Desktop/smart_password_lock
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10052 D:\Desktop\smart_password_lock\smart_password_lock.xpr
+# Log file: D:/Desktop/smart_password_lock/vivado.log
+# Journal file: D:/Desktop/smart_password_lock\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Desktop/smart_password_lock/smart_password_lock.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
