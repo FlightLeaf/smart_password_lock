@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Desktop/verilog/smart_password_lock/smart_password_lock.runs/synth_1/KeyValue.tcl"
+  variable script "D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/KeyValue.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 set_param simulator.modelsimInstallPath D:/modelsim/win64
 set_msg_config  -id {USF-ModelSim-70}  -string {{ERROR: [USF-ModelSim-70] 'compile' step failed with error(s) while executing 'D:/Desktop/verilog/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -80,18 +79,17 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/Desktop/verilog/smart_password_lock/smart_password_lock.cache/wt [current_project]
-set_property parent.project_path D:/Desktop/verilog/smart_password_lock/smart_password_lock.xpr [current_project]
+set_property webtalk.parent_dir D:/Desktop/smart_password_lock/smart_password_lock.cache/wt [current_project]
+set_property parent.project_path D:/Desktop/smart_password_lock/smart_password_lock.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Desktop/verilog/smart_password_lock/smart_password_lock.cache/ip [current_project]
+set_property ip_output_repo d:/Desktop/smart_password_lock/smart_password_lock.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/sources_1/new/KeyPress.v
-  D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_division.v
-  D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/sources_1/new/KeyValue.v
+  D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/KeyPress.v
+  D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/KeyValue.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -102,8 +100,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc
-set_property used_in_implementation false [get_files D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc]
+read_xdc D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc
+set_property used_in_implementation false [get_files D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Desktop/verilog/smart_password_lock/smart_password_lock.runs/synth_1'
+HD_PWD='D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

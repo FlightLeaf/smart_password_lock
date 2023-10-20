@@ -21,33 +21,40 @@
 
 
 module password_in(
-    clk,reset,col,row,keyvalue//,password
+    clk,reset,key_lie,key_hang,key_value//,password
     );
-    input clk;                  //扫描时钟
-    input reset;                //矩阵键盘复位信号,所有密码清除按键
-    input [3:0] col;            //列扫描信号
-    output [3:0] row;           //行扫描信号
-    output [3:0] keyvalue;      //输出键值
-    //output reg [23:0] password;     //完整密码输出
+    input clk;                      //扫描时钟
+    input reset;                    //矩阵键盘复位信号,所有密码清除按键
+    input [3:0] key_lie;            //接收的列扫描信号
+    output [3:0] key_hang;          //行扫描信号
+    output [3:0] key_value;         //输出键值
 
-    wire [3:0] col_eli;
-    wire [3:0] keyvalue_reg = 0;
-    reg [2:0] count = 0;
-    reg [23:0] new_password;
     wire clk1k;
     wire clk2k;
     wire clk3k;
     wire clk4k;
-    wire value_en;
+    wire [3:0] key_lie_eli;
 
     frequency_division frequency_division(clk,reset,clk1k,clk2k,clk3k,clk4k);
 
-    eliminate_dithering eliminate_dithering0(clk2k,reset,col[0],col_eli[0]);
-    eliminate_dithering eliminate_dithering1(clk2k,reset,col[1],col_eli[1]);
-    eliminate_dithering eliminate_dithering2(clk2k,reset,col[2],col_eli[2]);
-    eliminate_dithering eliminate_dithering3(clk2k,reset,col[3],col_eli[3]);
+    key_scan key_scan(clk4k,reset,key_hang);
 
-    keyboard_scan_decoder keyboard_scan_decoder(clk4k,reset,col_eli,row,keyvalue,value_en);
+    eliminate_dithering eliminate_dithering0(clk2k,reset,key_lie[0],key_lie_eli[0]);
+    eliminate_dithering eliminate_dithering1(clk2k,reset,key_lie[1],key_lie_eli[1]);
+    eliminate_dithering eliminate_dithering2(clk2k,reset,key_lie[2],key_lie_eli[2]);
+    eliminate_dithering eliminate_dithering3(clk2k,reset,key_lie[3],key_lie_eli[3]);
+
+    keyboard_decoder keyboard_decoder(clk4k,key_hang,key_lie_eli,key_value);
+
+endmodule
+
+
+
+
+
+
+
+
 
 
     /*
@@ -127,4 +134,3 @@ module password_in(
             endcase
         end
     end*/
-endmodule

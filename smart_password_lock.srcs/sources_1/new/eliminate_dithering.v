@@ -52,7 +52,7 @@ module eliminate_dithering(
         end
     end
 
-    always @(din or reset or state) begin
+    always @(din or state) begin
         case (state)
             s0: begin
                 dout <= 0;
