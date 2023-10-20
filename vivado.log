@@ -2,24 +2,20 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Thu Oct 19 22:39:13 2023
-# Process ID: 8064
+# Start of session at: Fri Oct 20 19:15:12 2023
+# Process ID: 7580
 # Current directory: D:/Desktop/smart_password_lock
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10052 D:\Desktop\smart_password_lock\smart_password_lock.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15132 D:\Desktop\smart_password_lock\smart_password_lock.xpr
 # Log file: D:/Desktop/smart_password_lock/vivado.log
 # Journal file: D:/Desktop/smart_password_lock\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project D:/Desktop/smart_password_lock/smart_password_lock.xpr
-INFO: [Project 1-313] Project file moved from 'D:/Desktop/verilog/smart_password_lock' since last save.
-WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'D:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1', nor could it be found using path 'D:/Desktop/verilog/smart_password_lock/smart_password_lock.gen/sources_1'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2021.1/data/ip'.
-open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1135.898 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1133.402 ; gain = 0.000
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-exit
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 19 23:05:45 2023...
