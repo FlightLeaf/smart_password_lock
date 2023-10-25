@@ -41,7 +41,6 @@ module state_delay(
     parameter switch_state = 4'b0100;               //状态S4：开门状态
     parameter password_mistake_state = 4'b0101;     //状态S5：输入密码开门错误状态
     parameter change_mistake_state = 4'b0110;       //状态S6：修改密码错误状态
-    parameter password_success_state = 4'b0111;     //状态S7：成功状态
     parameter change_success_state = 4'b1000;       //状态S8：修改密码成功状态
 
     reg [29:0] state_count = 0;                     //延时计数器
@@ -62,7 +61,7 @@ module state_delay(
                     reset <= 0;
                 end
                 warning_state: begin                //警报状态
-                    if(state_count >= state_count_parameter*2) begin
+                    if(state_count >= state_count_parameter) begin
                         reset <= 1;                 //延时结束输出状态机复位信号
                         state_count <= 0;
                     end else begin
@@ -121,12 +120,6 @@ module state_delay(
                 led_ok = 0;
                 led_no = 1;
             end
-            password_success_state: begin
-                led_switch = 1;
-                led_change = 0;
-                led_ok = 1;
-                led_no = 0;
-            end
             change_mistake_state: begin
                 led_switch = 1;
                 led_change = 1;
@@ -147,5 +140,4 @@ module state_delay(
             end
         endcase
     end
-
 endmodule

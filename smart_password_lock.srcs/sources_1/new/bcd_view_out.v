@@ -21,15 +21,16 @@
 
 
 module bcd_view_out(
-    clk3k,data_bcd,sel,dout
+    clk3k,data_bcd,sel_temp,dout
     );
     input clk3k;                //数码管扫描时钟
     input [23:0] data_bcd;      //BCD待显示数据输入
-    output reg [2:0] sel = 0;   //位选信号
+    output [2:0] sel_temp;   //位选信号
     output reg [3:0] dout;      //输出信号
 
+    reg [2:0] sel = 0;
     always @(posedge clk3k) begin
-        if(sel<5) begin
+        if(sel < 5) begin
             sel <= sel + 1;
         end else begin
             sel <= 0;
@@ -61,4 +62,5 @@ module bcd_view_out(
             end
         endcase
     end
+    assign sel_temp = sel;
 endmodule

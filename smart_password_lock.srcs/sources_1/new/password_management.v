@@ -25,10 +25,10 @@ module password_management(
     );
     input clk;
     input renew;
-    input [5:0] password;
+    input [23:0] password;
     output reg result;
 
-    reg [5:0] password_main = 6'b010101;
+    reg [23:0] password_main = 24'h000000;
 
     always @(posedge clk or posedge renew) begin
         if (renew) begin

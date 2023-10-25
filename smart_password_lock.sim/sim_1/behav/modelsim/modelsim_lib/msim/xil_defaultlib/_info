@@ -27,6 +27,7 @@ R1
 R2
 n@_opt1
 R3
+R0
 vbcd
 !s10a 1697299690
 Z4 !s110 1697300495
@@ -111,6 +112,26 @@ R14
 R15
 !i113 0
 R11
+vbluetooth
+Z16 !s110 1698146200
+!i10b 1
+!s100 =MeQH_>C8c0z>^k3<B9Si1
+I:g1@fOR8GaCBV7MKjCC1J2
+R5
+Z17 dD:/Desktop/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim
+w1698143665
+8../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v
+F../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v
+R6
+R7
+r1
+!s85 0
+31
+Z18 !s108 1698146200.212000
+Z19 !s107 ../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|
+Z20 !s90 -incr|-mfcu|-work|xil_defaultlib|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v|
+!i113 0
+R11
 vdisplay_decode
 !s10a 1697299228
 R4
@@ -132,8 +153,28 @@ R9
 R10
 !i113 0
 R11
+vfrequency_1_2
+R16
+!i10b 1
+!s100 DcYAj5;3YWUQJn]@[onWN2
+IVdhZE_gGY4i?R_>bU<D_D3
+R5
+R17
+w1698143264
+8../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v
+F../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v
+R6
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 0
+R11
 vfrequency_division
-Z16 !s110 1697300628
+!s110 1697300628
 !i10b 1
 !s100 mU7R=AegYo_h:F=P5WEQ32
 IaH3m8<d6b::8gdjai9a0o1
@@ -158,7 +199,7 @@ R16
 !s100 aGX4R92RO3^bD43HL2j:J2
 I5GBkB2^BD7zJ]g29CKF3T3
 R5
-R0
+R17
 w1623370582
 8glbl.v
 Fglbl.v
@@ -167,8 +208,68 @@ R7
 r1
 !s85 0
 31
-!s108 1697300628.317000
+!s108 1698146200.460000
 !s107 glbl.v|
 !s90 -work|xil_defaultlib|glbl.v|
 !i113 0
 o-work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vtestbench
+R16
+!i10b 1
+!s100 bdg88e@M]h>3``M]2UYBi0
+I?DF]UVRXNdhh1Hb;b^7]63
+R5
+R17
+w1698146093
+8../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v
+F../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v
+R6
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 0
+R11
+vuart_r
+R16
+!i10b 1
+!s100 Ze1E[:[OPjaHOACi>ze7o0
+IcEz?5ajVV6z;W9JGJGE@V1
+R5
+R17
+Z21 w1698141762
+8../../../../smart_password_lock.srcs/sources_1/new/uart_r.v
+F../../../../smart_password_lock.srcs/sources_1/new/uart_r.v
+L0 22
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 0
+R11
+vuart_t
+R16
+!i10b 1
+!s100 d@?^9X1<ObiF7zCV?YZ]M2
+IHomDYmQQjX?739T_RO?fU1
+R5
+R17
+R21
+8../../../../smart_password_lock.srcs/sources_1/new/uart_t.v
+F../../../../smart_password_lock.srcs/sources_1/new/uart_t.v
+R6
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 0
+R11

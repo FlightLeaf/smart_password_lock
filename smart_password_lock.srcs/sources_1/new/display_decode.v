@@ -27,7 +27,7 @@ module display_decode (
     input [3:0] din;        //BCD待显示数据输入
     output reg [6:0] dout;  //输出
 
-    always@ (din)begin
+    always @(din)begin
         //译码过程
         case (din)
             0: dout=7'b0000001;
@@ -40,6 +40,8 @@ module display_decode (
             7: dout=7'b0001111;
             8: dout=7'b0000000;
             9: dout=7'b0000100;
+            4'hd: dout=7'b1110110;
+            4'he: dout=7'b1111110;
             default: dout=7'b0000000;
         endcase
     end

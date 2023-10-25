@@ -1,0 +1,98 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Wed Oct 25 22:48:07 2023
+| Host         : xiaoxin running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    20 |
+|    Minimum number of control sets                        |    20 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    75 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    20 |
+| >= 0 to < 4        |     5 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              73 |           29 |
+| No           | No                    | Yes                    |              34 |           12 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              58 |           18 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              40 |           12 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+--------------+
+|               Clock Signal              |                        Enable Signal                        |                       Set/Reset Signal                      | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+--------------+
+|  cnt_message_reg[4]_i_4_n_0             | nolabel_line67/bluetooth/uart_t_1/tx1_out                   |                                                             |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                          |                                                             |                                                             |                1 |              1 |         1.00 |
+|  frequency_division/clk1k_reg_0         |                                                             | rst_IBUF                                                    |                1 |              1 |         1.00 |
+|  new_machine/warning_num_reg[1]_i_2_n_0 |                                                             |                                                             |                2 |              2 |         1.00 |
+|  frequency_division/clk3k               |                                                             |                                                             |                1 |              3 |         3.00 |
+|  p_1_in_BUFG                            |                                                             |                                                             |                3 |              4 |         1.33 |
+| ~p_1_in_BUFG                            | nolabel_line67/count[2]_i_1_n_0                             | nolabel_line67/password_bcd[23]_i_1_n_0                     |                1 |              4 |         4.00 |
+|  frequency_division/CLK                 |                                                             | rst_IBUF                                                    |                1 |              4 |         4.00 |
+|  new_machine/state_reg[3]_i_2_n_0       |                                                             |                                                             |                2 |              4 |         2.00 |
+|  cnt_message_reg[4]_i_4_n_0             | nolabel_line67/bluetooth/uart_r_1/cnt_message[4]_i_2__0_n_0 | nolabel_line67/bluetooth/uart_r_1/cnt_message[4]_i_1_n_0    |                2 |              5 |         2.50 |
+|  cnt_message_reg[4]_i_4_n_0             | nolabel_line67/bluetooth/uart_t_1/cnt_message[4]_i_2_n_0    | nolabel_line67/bluetooth/uart_t_1/cnt_message[4]_i_1__0_n_0 |                1 |              5 |         5.00 |
+|  cnt_message_reg[4]_i_4_n_0             | nolabel_line67/bluetooth/uart_r_1/message[7]_i_1_n_0        |                                                             |                2 |              8 |         4.00 |
+|  cnt_message_reg[4]_i_4_n_0             |                                                             |                                                             |                6 |             11 |         1.83 |
+|  cnt_message_reg[4]_i_4_n_0             | nolabel_line67/bluetooth/uart_r_1/cnt_clk[12]_i_2_n_0       | nolabel_line67/bluetooth/uart_r_1/cnt_clk[12]_i_1_n_0       |                4 |             13 |         3.25 |
+|  cnt_message_reg[4]_i_4_n_0             | nolabel_line67/bluetooth/uart_t_1/cnt_clk[0]_i_2_n_0        | nolabel_line67/bluetooth/uart_r_1/t_start19_out             |                4 |             13 |         3.25 |
+| ~p_1_in_BUFG                            | nolabel_line67/count[2]_i_1_n_0                             |                                                             |                8 |             23 |         2.88 |
+|  new_machine/passowrd_reg_one__0        |                                                             |                                                             |                7 |             24 |         3.43 |
+|  new_machine/passowrd_main__0           |                                                             |                                                             |                7 |             24 |         3.43 |
+|  frequency_division/clk1k_reg_0         | new_machine/state_count                                     |                                                             |                7 |             26 |         3.71 |
+|  clk_IBUF_BUFG                          |                                                             | rst_IBUF                                                    |               10 |             29 |         2.90 |
++-----------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+--------------+
+
+

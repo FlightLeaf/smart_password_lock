@@ -21,41 +21,44 @@
 
 
 module bcd(
-    clk3k,sel,dout
+    clk3k,data_bcd,sel,dout
     );
     input clk3k;            //数码管扫描时钟
-    output reg [7:0] sel;   //位选数据输出
+    input [23:0] data_bcd;
+    output [7:0] sel;   //位选数据输出
     output [6:0] dout;      //七段管数据输出
 
     reg rst = 0;
+    reg [7:0] sel_reg;
     wire [2:0] sel_temp;
-    reg [23:0] data_bcd = 24'h265897;
     wire [3:0] din;
     bcd_view_out bcd_view_out(clk3k,data_bcd,sel_temp,din);
     always @(sel_temp) begin
         case (sel_temp)
             0:begin
-                sel <= 8'b11011111;
+                sel_reg <= 8'b11011111;
             end 
             1:begin
-                sel <= 8'b11101111;
+                sel_reg <= 8'b11101111;
             end 
             2:begin
-                sel <= 8'b11110111;
+                sel_reg <= 8'b11110111;
             end 
             3:begin
-                sel <= 8'b11111011;
+                sel_reg <= 8'b11111011;
             end 
             4:begin
-                sel <= 8'b11111101;
+                sel_reg <= 8'b11111101;
             end 
             5:begin
-                sel <= 8'b11111110;
+                sel_reg <= 8'b11111110;
             end 
             default: begin
-                sel <= 8'b11111111;
+                sel_reg <= 8'b11111111;
             end
         endcase
     end
+    assign sel = sel_reg;
+    
     display_decode display_decode(din,dout);
 endmodule

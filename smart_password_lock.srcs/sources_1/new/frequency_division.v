@@ -73,8 +73,8 @@ module frequency_division(
         end
     end
 
-    reg [15:0] count4 = 0;
-    parameter COUNT4 = 16'd999;     //999
+    reg [31:0] count4 = 0;
+    parameter COUNT4 = 32'd4999999;     //4999999
     always @(posedge clk or posedge reset) begin
         if(reset) begin
             count4 <= 0;

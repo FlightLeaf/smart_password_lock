@@ -2,7 +2,12 @@
 2020.2
 Jun 10 2021
 20:04:57
-D:/Desktop/verilog/smart_password_lock/smart_password_lock.sim/sim_1/behav/xsim/glbl.v,1623370582,verilog,,,,glbl,,,,,,,,
+D:/Desktop/smart_password_lock/smart_password_lock.sim/sim_1/behav/xsim/glbl.v,1623370582,verilog,,,,glbl,,,,,,,,
+D:/Desktop/smart_password_lock/smart_password_lock.srcs/sim_1/new/fre_tb.v,1698146093,verilog,,,,testbench,,,,,,,,
+D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bluetooth.v,1698143665,verilog,,D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_1_2.v,,bluetooth,,,,,,,,
+D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_1_2.v,1698143264,verilog,,D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_r.v,,frequency_1_2,,,,,,,,
+D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_r.v,1698141762,verilog,,D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_t.v,,uart_r,,,,,,,,
+D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_t.v,1698141762,verilog,,D:/Desktop/smart_password_lock/smart_password_lock.srcs/sim_1/new/fre_tb.v,,uart_t,,,,,,,,
 D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/sim_1/new/bcd_tb.v,1697288024,verilog,,,,bcd_tb,,,,,,,,
 D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/sim_1/new/keyboard_tb.v,1697456900,verilog,,,,keyboard_tb,,,,,,,,
 D:/Desktop/verilog/smart_password_lock/smart_password_lock.srcs/sim_1/new/state_mac_tb.v,1697162582,verilog,,,,state_mac_tb,,,,,,,,

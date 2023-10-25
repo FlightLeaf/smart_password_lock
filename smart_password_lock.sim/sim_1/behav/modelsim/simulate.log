@@ -12,23 +12,17 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# do {bcd_tb_tb_simulate.do}
-# vsim -do "do {bcd_tb_tb_simulate.do}" -l simulate.log 
-# Start time: 00:23:52 on Oct 15,2023
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# do {testbench_simulate.do}
+# vsim -do "do {testbench_simulate.do}" -l simulate.log 
+# Start time: 19:16:51 on Oct 24,2023
+# ** Note: (vsim-3812) Design is being optimized...
 # 
-# Loading work.bcd_tb_tb(fast)
-# Loading work.bcd(fast)
-# Loading work.frequency_division(fast)
-# Loading work.bcd_view_out(fast)
-# Loading work.display_decode(fast)
-# Loading work.glbl(fast)
-# ** Warning: (vsim-3015) ../../../../smart_password_lock.srcs/sources_1/new/bcd.v(36): [PCDPC] - Port size (3) does not match connection size (1) for port 'sel'. The port definition is at: ../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v(24).
-#    Time: 0 ps  Iteration: 0  Instance: /bcd_tb_tb/bcd/bcd_view_out File: ../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v
-# 1
-# 1
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# End time: 00:25:06 on Oct 15,2023, Elapsed time: 0:01:14
-# Errors: 0, Warnings: 1
+# ** Error: ../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v(62): (vopt-2912) Port 'sys_clk' not found in module 'bluetooth' (1st connection).
+# 
+# Optimization failed
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./testbench_simulate.do PAUSED at line 9
+# End time: 19:17:17 on Oct 24,2023, Elapsed time: 0:00:26
+# Errors: 1, Warnings: 0

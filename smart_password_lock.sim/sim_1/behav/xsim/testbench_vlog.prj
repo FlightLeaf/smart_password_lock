@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v" \
+"../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v" \
+"../../../../smart_password_lock.srcs/sources_1/new/uart_r.v" \
+"../../../../smart_password_lock.srcs/sources_1/new/uart_t.v" \
+"../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

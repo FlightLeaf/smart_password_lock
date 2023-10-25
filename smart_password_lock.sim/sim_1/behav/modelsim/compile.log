@@ -1,4 +1,4 @@
-# do {bcd_tb_tb_compile.do}
+# do {testbench_compile.do}
 # ** Warning: (vlib-34) Library already exists at "modelsim_lib/work".
 # 
 # ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim".
@@ -9,24 +9,24 @@
 # vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 00:23:48 on Oct 15,2023
-# vlog -incr -mfcu -work xil_defaultlib ../../../../smart_password_lock.srcs/sources_1/new/bcd.v ../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v ../../../../smart_password_lock.srcs/sources_1/new/display_decode.v ../../../../smart_password_lock.srcs/sources_1/new/frequency_division.v ../../../../smart_password_lock.srcs/sim_1/new/bcd_tb_tb.v 
-# -- Skipping module bcd
-# -- Skipping module bcd_view_out
-# -- Skipping module display_decode
-# -- Compiling module frequency_division
-# -- Skipping module bcd_tb_tb
+# Start time: 19:16:40 on Oct 24,2023
+# vlog -incr -mfcu -work xil_defaultlib ../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v ../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v ../../../../smart_password_lock.srcs/sources_1/new/uart_r.v ../../../../smart_password_lock.srcs/sources_1/new/uart_t.v ../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v 
+# -- Compiling module bluetooth
+# -- Compiling module frequency_1_2
+# -- Compiling module uart_r
+# -- Compiling module uart_t
+# -- Compiling module testbench
 # 
 # Top level modules:
-# 	bcd_tb_tb
-# End time: 00:23:48 on Oct 15,2023, Elapsed time: 0:00:00
+# 	testbench
+# End time: 19:16:40 on Oct 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 00:23:48 on Oct 15,2023
+# Start time: 19:16:40 on Oct 24,2023
 # vlog -work xil_defaultlib glbl.v 
 # -- Compiling module glbl
 # 
 # Top level modules:
 # 	glbl
-# End time: 00:23:48 on Oct 15,2023, Elapsed time: 0:00:00
+# End time: 19:16:40 on Oct 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
