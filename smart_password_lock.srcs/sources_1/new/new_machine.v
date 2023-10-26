@@ -21,8 +21,9 @@
 
 
 module new_machine(
-    reset,password,ok,change_password,state
+    clk,reset,password,ok,change_password,state
     );
+    input clk;
     input reset;                                    //复位键
     input [23:0] password;                           //密码或者是修改密码中的输入
     input ok;                                       //确认按钮
@@ -32,7 +33,7 @@ module new_machine(
     output reg [3:0] state = 4'b0000;               //密码锁当前状态
 
     
-    //状态常数
+    ///状态常数
     parameter in_password_state = 4'b0000;          //状态S0：等待密码状态
     parameter change_password_state_one = 4'b0001;  //状态S1：修改密码状态1
     parameter change_password_state_two = 4'b0010;  //状态S2：修改密码状态2
@@ -44,70 +45,62 @@ module new_machine(
 
     reg [23:0] passowrd_reg_one;
     reg [23:0] passowrd_reg_two;
+    
+    reg renew = 0;
+    wire result_password_manage;
 
     reg [2:0] warning_num = 3'b000;                 //密码输入错误次数记录
+    password_management password_management(
+        clk,renew,password,result_password_manage);
 
-    reg [23:0] passowrd_main = 24'h0000000;
-
-    always @(reset or ok or change_password ) begin
-        if(reset) begin
-            state <= in_password_state;
-        end else begin
-            case (state)
-                in_password_state: begin
+    always @(reset or ok or change_password) begin
+        case (state)
+            in_password_state: begin
+                if(result_password_manage) begin
                     if(ok) begin
-                        if(password == passowrd_main) begin
-                            state <= switch_state;
-                        end else begin
-                            if(warning_num >= 3'b011) begin                            
-                                state <= warning_state;
-                                warning_num <= 0;                            
-                            end else begin
-                                state <= password_mistake_state; 
-                                warning_num <= warning_num + 1;
-                            end
-                        end
+                        state <= switch_state;
                     end else if(change_password) begin
-                        if(password == passowrd_main) begin
-                            state <= change_password_state_one;
+                        state <= change_password_state_one;
+                    end else begin
+                        state <= in_password_state;
+                    end
+                end else begin
+                    if(ok | change_password) begin
+                        if(warning_num >= 3'b011) begin                            
+                            state <= warning_state;
+                            warning_num <= 0;                            
                         end else begin
-                            if(warning_num >= 3'b011) begin                            
-                                state <= warning_state;
-                                warning_num <= 0;                            
-                            end else begin
-                                state <= password_mistake_state; 
-                                warning_num <= warning_num + 1;
-                            end
+                            state <= password_mistake_state; 
+                            warning_num <= warning_num + 1;
                         end
                     end else begin
                         state <= in_password_state;
                     end
-                end 
-                change_password_state_one: begin
-                    if(ok) begin
-                        passowrd_reg_one <= password;    //密码存入寄存器
-                        state <= change_password_state_two;    //进入二次输入状态
-                    end else begin
-                        state <= change_password_state_one;    //状态不变
-                    end
-                end 
-                change_password_state_two: begin
-                    if(ok) begin
-                        if(passowrd_reg_one == password)begin
-                            passowrd_main <= password;
-                            state <= change_success_state;
-                        end else begin
-                            state <= change_mistake_state; 
-                        end
-                    end else begin
-                        state <= change_password_state_two;  //状态不变
-                    end
-                end 
-                default: begin
-                    
                 end
-            endcase
-        end
-        
+            end 
+            change_password_state_one: begin
+                if(ok) begin
+                    passowrd_reg_one <= password;    //密码存入寄存器
+                    state <= change_password_state_two;    //进入二次输入状态
+                end else begin
+                    state <= change_password_state_one;    //状态不变
+                end
+            end 
+            change_password_state_two: begin
+                if(ok) begin
+                    if(passowrd_reg_one == password)begin
+                        renew <= 1;
+                        state <= change_success_state;
+                    end else begin
+                        state <= change_mistake_state; 
+                    end
+                end else begin
+                    state <= change_password_state_two;  //状态不变
+                end
+            end 
+            default: begin
+                renew <= 0;
+            end
+        endcase
     end
 endmodule
