@@ -53,54 +53,7 @@ module new_machine(
     password_management password_management(
         clk,renew,password,result_password_manage);
 
-    always @(reset or ok or change_password) begin
-        case (state)
-            in_password_state: begin
-                if(result_password_manage) begin
-                    if(ok) begin
-                        state <= switch_state;
-                    end else if(change_password) begin
-                        state <= change_password_state_one;
-                    end else begin
-                        state <= in_password_state;
-                    end
-                end else begin
-                    if(ok | change_password) begin
-                        if(warning_num >= 3'b011) begin                            
-                            state <= warning_state;
-                            warning_num <= 0;                            
-                        end else begin
-                            state <= password_mistake_state; 
-                            warning_num <= warning_num + 1;
-                        end
-                    end else begin
-                        state <= in_password_state;
-                    end
-                end
-            end 
-            change_password_state_one: begin
-                if(ok) begin
-                    passowrd_reg_one <= password;    //密码存入寄存器
-                    state <= change_password_state_two;    //进入二次输入状态
-                end else begin
-                    state <= change_password_state_one;    //状态不变
-                end
-            end 
-            change_password_state_two: begin
-                if(ok) begin
-                    if(passowrd_reg_one == password)begin
-                        renew <= 1;
-                        state <= change_success_state;
-                    end else begin
-                        state <= change_mistake_state; 
-                    end
-                end else begin
-                    state <= change_password_state_two;  //状态不变
-                end
-            end 
-            default: begin
-                renew <= 0;
-            end
-        endcase
+    always @(posedge ok or posedge change_password or posedge reset) begin
+        
     end
 endmodule

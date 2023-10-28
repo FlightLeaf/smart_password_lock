@@ -28,6 +28,7 @@ module state_delay(
     input rst;                  //复位键
 
     output reg reset;           //状态机复位控制信号，输出控制状态的转换
+    
     output reg led_switch;      //门开关状态
     output reg led_change;      //是否处于修改密码状态
     output reg led_ok;          //成功

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Thu Oct 26 08:42:19 2023
+| Date         : Thu Oct 26 23:05:11 2023
 | Host         : xiaoxin running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
@@ -41,7 +41,7 @@ Timing Summary Report
 
 Rule       Severity          Description                   Violations  
 ---------  ----------------  ----------------------------  ----------  
-TIMING-17  Critical Warning  Non-clocked sequential cell   208         
+TIMING-17  Critical Warning  Non-clocked sequential cell   211         
 LUTAR-1    Warning           LUT drives async reset alert  48          
 TIMING-20  Warning           Non-clocked latch             59          
 
@@ -53,10 +53,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (417)
+1. checking no_clock (420)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (496)
+4. checking unconstrained_internal_endpoints (502)
 5. checking no_input_delay (4)
 6. checking no_output_delay (18)
 7. checking multiple_clock (0)
@@ -66,9 +66,9 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (2)
 
-1. checking no_clock (417)
+1. checking no_clock (420)
 --------------------------
- There are 30 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 33 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
  There are 27 register/latch pins with no clock driven by root clock pin: eliminate_dithering1/FSM_sequential_state_reg[0]/Q (HIGH)
 
@@ -84,57 +84,57 @@ Table of Contents
 
  There are 3 register/latch pins with no clock driven by root clock pin: frequency_division/clk3k_reg/Q (HIGH)
 
- There are 56 register/latch pins with no clock driven by root clock pin: nolabel_line67/bluetooth/frequency_1_2/clk50m_reg/Q (HIGH)
+ There are 56 register/latch pins with no clock driven by root clock pin: nolabel_line73/bluetooth/frequency_1_2/clk50m_reg/Q (HIGH)
 
- There are 31 register/latch pins with no clock driven by root clock pin: nolabel_line67/bluetooth/uart_r_1/message_reg[7]/Q (HIGH)
+ There are 31 register/latch pins with no clock driven by root clock pin: nolabel_line73/bluetooth/uart_r_1/message_reg[7]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[0]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[0]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[10]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[10]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[11]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[11]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[12]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[12]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[13]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[13]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[14]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[14]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[15]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[15]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[16]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[16]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[17]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[17]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[18]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[18]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[19]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[19]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[1]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[1]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[20]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[20]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[21]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[21]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[22]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[22]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[23]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[23]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[2]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[2]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[3]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[3]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[4]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[4]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[5]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[5]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[6]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[6]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[7]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[7]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[8]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[8]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line67/password_bcd_reg[9]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: nolabel_line73/password_bcd_reg[9]/Q (HIGH)
 
  There are 11 register/latch pins with no clock driven by root clock pin: state_machine/FSM_onehot_state_reg[0]/Q (HIGH)
 
@@ -205,9 +205,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (496)
+4. checking unconstrained_internal_endpoints (502)
 --------------------------------------------------
- There are 496 pins that are not constrained for maximum delay. (HIGH)
+ There are 502 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
