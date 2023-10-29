@@ -22,15 +22,13 @@
 //clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd
 
 module top(
-    clk,rst,ok,change_password,rx,display,
+    clk,rst,rx,display,
     led_switch,led_change,led_ok,led_no,tx,sel,dout
     );
 
     //输入变量
     input clk;                  //时钟
     input rst;                  //复位键
-    input ok;                   //确认按钮
-    input change_password;      //修改密码按钮
     input rx;                   //蓝牙输入
     input display;              //是否显示密码
 
@@ -51,33 +49,35 @@ module top(
     wire [3:0] state_now;       //当前状态
     wire reset;                 //状态机复位信号
 
-    wire ok_eli;                    //确认按钮
-    wire change_password_eli;       //修改密码按钮
+    //wire ok_eli;                    //确认按钮
+    //wire change_password_eli;       //修改密码按钮
 
-    wire [23:0] password_reg;         //密码寄存器
-    reg clear = 1;
+    wire [23:0] password_reg = 24'h000000;         //密码寄存器
+    wire clear = 1;
+    wire ok;
+    wire change_password; 
 
     //分频模块
     frequency_division frequency_division(clk,rst,clk1k,clk2k,clk3k,clk4k);
 
 
     //确认键消抖
-    eliminate_dithering eliminate_dithering1(clk2k,rst,ok,ok_eli);
+    //eliminate_dithering eliminate_dithering1(clk2k,rst,ok,ok_eli);
 
 
     //修改密码键消抖
-    eliminate_dithering eliminate_dithering2(clk2k,rst,change_password,change_password_eli);
+    //eliminate_dithering eliminate_dithering2(clk2k,rst,change_password,change_password_eli);
 
 
     //密码输入
-    password_in(clk,clk3k,rst,clear,rx,display,tx,sel,dout,password_reg);
+    password_in password_in(clk,clk3k,rst,clear,rx,display,tx,sel,dout,password_reg,ok,change_password);
 
+    //密码输入延迟关闭
+    password_in_delay password_in_delay(ok,change_password,rst,clk2k,clear);
 
     //状态机模块
-    state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state_now);
+    state_machine state_machine(clk1k,reset,password_reg,ok,change_password,state_now);
 
-
-    //new_machine new_machine(clk1k,reset,password_reg,ok,change_password,state_now);
 
     //特殊状态延时模块
     state_delay state_delay(clk1k,state_now,rst,reset,led_switch,led_change,led_ok,led_no);

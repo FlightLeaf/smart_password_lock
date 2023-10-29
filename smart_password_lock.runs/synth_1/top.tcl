@@ -92,10 +92,10 @@ read_verilog -library xil_defaultlib {
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bcd_view_out.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bluetooth.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/display_decode.v
-  D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/eliminate_dithering.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_1_2.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_division.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/password_in.v
+  D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/password_in_delay.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/password_management.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/state_delay.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/state_machine.v

@@ -1,10 +1,16 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bcd_view_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd_view_out
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bluetooth.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bluetooth
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/display_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display_decode
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_1_2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module frequency_1_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/password_in.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module password_in
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_r.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module uart_r
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_t.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module uart_t
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sim_1/new/fre_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sim_1/new/password_in_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module password_in_tb

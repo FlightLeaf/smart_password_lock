@@ -19,40 +19,8 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-/*module password_in(
-    clk,reset,key_lie,key_hang,key_value//clk,reset,key_in,key_out,led_out,value_en//,password
-    );
-    input clk;                      //扫描时钟
-    input reset;                    //矩阵键盘复位信号,所有密码清除按键
-    input [3:0] key_lie;            //接收的列扫描信号
-    output [3:0] key_hang;          //行扫描信号
-    output [3:0] key_value;         //输出键值
-    //output key_value;
-
-    wire clk1k;
-    wire clk2k;
-    wire clk3k;
-    wire clk4k;
-    wire [3:0] key_lie_eli;
-
-    frequency_division frequency_division(clk,reset,clk1k,clk2k,clk3k,clk4k);
-
-    //key_4_0 key_4_0(clk4k,reset,key_in,key_out,led_out,value_en);
-
-    key_scan key_scan(clk4k,reset,key_hang);
-
-    eliminate_dithering eliminate_dithering0(clk2k,reset,key_lie[0],key_lie_eli[0]);
-    eliminate_dithering eliminate_dithering1(clk2k,reset,key_lie[1],key_lie_eli[1]);
-    eliminate_dithering eliminate_dithering2(clk2k,reset,key_lie[2],key_lie_eli[2]);
-    eliminate_dithering eliminate_dithering3(clk2k,reset,key_lie[3],key_lie_eli[3]);
-
-    keyboard_decoder keyboard_decoder(clk4k,key_hang,key_lie_eli,key_value);
-
-endmodule*/
-
 module password_in(
-    clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd
+    clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd,ok,change_password
     );
     input clk;
     input clk3k;
@@ -65,6 +33,8 @@ module password_in(
     output reg [7:0] sel;
     output [6:0] dout;
     output reg [23:0] password_bcd = 24'h0;
+    output reg ok = 0;
+    output reg change_password = 0;
 
     wire [7:0] message;
     reg [23:0] data_bcd = 24'hEEEEEE;
@@ -82,6 +52,8 @@ module password_in(
     end
     always @(negedge message[7] or negedge clear) begin
         if(!clear) begin
+            ok <= 0;
+            change_password <= 0;
             password_bcd <= 24'h000000;
         end else begin
             case (message_reg)
@@ -104,10 +76,10 @@ module password_in(
                     
                 end
                 4'hE: begin
-                    
+                    ok <= 1;
                 end
                 4'hF: begin
-                    
+                    change_password <= 1;
                 end 
                 default: begin
                     if(count < 6) begin

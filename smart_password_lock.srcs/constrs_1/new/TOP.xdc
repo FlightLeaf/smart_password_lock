@@ -40,21 +40,19 @@ set_property PACKAGE_PIN J17 [get_ports {sel[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports display]
 set_property PACKAGE_PIN P18 [get_ports display]
 
-set_property IOSTANDARD LVCMOS33 [get_ports change_password]
 set_property IOSTANDARD LVCMOS33 [get_ports led_change]
 set_property IOSTANDARD LVCMOS33 [get_ports led_no]
 set_property IOSTANDARD LVCMOS33 [get_ports led_ok]
 set_property IOSTANDARD LVCMOS33 [get_ports led_switch]
-set_property IOSTANDARD LVCMOS33 [get_ports ok]
+
 set_property IOSTANDARD LVCMOS33 [get_ports rst]
 set_property PACKAGE_PIN M17 [get_ports rst]
-set_property PACKAGE_PIN M18 [get_ports change_password]
 set_property PACKAGE_PIN V11 [get_ports led_change]
 set_property PACKAGE_PIN V12 [get_ports led_no]
 set_property PACKAGE_PIN V14 [get_ports led_ok]
 
 set_property PACKAGE_PIN V15 [get_ports led_switch]
 
-set_property PACKAGE_PIN P17 [get_ports ok]
+
 
 
