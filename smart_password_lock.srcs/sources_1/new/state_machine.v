@@ -65,53 +65,60 @@ module state_machine(
     end
 
     always @(reset or ok or change_password ) begin
-        case (state)
-            in_password_state: begin
-                if(result_password_manage) begin
-                    if(ok) begin
-                        next_state <= switch_state;
-                    end else if(change_password) begin
-                        next_state <= change_password_state_one;
-                    end else begin
-                        next_state <= in_password_state;
-                    end
-                end else begin
-                    if(ok | change_password) begin
-                        if(warning_num >= 3'b011) begin                            
-                            next_state <= warning_state;
-                            warning_num <= 0;                            
+        if(reset) begin
+            next_state = in_password_state;
+        end else begin
+            case (state)
+                in_password_state: begin
+                    if(result_password_manage) begin
+                        if(ok) begin
+                            next_state = switch_state;
                         end else begin
-                            next_state <= password_mistake_state; 
-                            warning_num <= warning_num + 1;
+                            if(change_password) begin
+                                next_state = change_password_state_one;
+                            end else begin
+                                renew = 0;
+                            end
                         end
                     end else begin
-                        next_state <= in_password_state;
+                        if(ok | change_password) begin
+                            if(warning_num >= 3'b101) begin 
+                                warning_num = 0; 
+                                next_state = warning_state;                   
+                            end else begin
+                                warning_num = warning_num + 1;
+                                next_state = password_mistake_state; 
+                            end
+                        end else begin
+                            
+                        end
                     end
-                end
-            end 
-            change_password_state_one: begin
-                if(ok) begin
-                    passowrd_reg_one <= password;    //密码存入寄存器
-                    next_state <= change_password_state_two;    //进入二次输入状态
-                end else begin
-                    next_state <= change_password_state_one;    //状态不变
-                end
-            end 
-            change_password_state_two: begin
-                if(ok) begin
-                    if(passowrd_reg_one == password)begin
-                        renew <= 1;
-                        next_state <= change_success_state;
+                end 
+                change_password_state_one: begin
+                    if(ok) begin
+                        passowrd_reg_one = password;    //密码存入寄存器
+                        next_state = change_password_state_two;    //进入二次输入状态
                     end else begin
-                        next_state <= change_mistake_state; 
+                        
                     end
-                end else begin
-                    next_state <= change_password_state_two;  //状态不变
+                end 
+                change_password_state_two: begin
+                    if(ok) begin
+                        if(passowrd_reg_one == password)begin
+                            renew = 1;
+                            next_state = change_success_state;
+                        end else begin
+                            next_state = change_mistake_state; 
+                        end
+                    end else begin
+                        
+                    end
+                end 
+                default: begin
+                    renew = 0;
                 end
-            end 
-            default: begin
-                renew <= 0;
-            end
-        endcase
+            endcase
+        end
+        
     end
 endmodule

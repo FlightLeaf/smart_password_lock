@@ -21,7 +21,7 @@
 
 
 module state_delay(
-    clk1k,state_now,rst,reset,led_switch,led_change,led_ok,led_no
+    clk1k,state_now,rst,reset,led_switch,led_change,led_ok,led_no,beep
     );
     input clk1k;                //时钟
     input [3:0] state_now;      //当前状态
@@ -33,6 +33,7 @@ module state_delay(
     output reg led_change;      //是否处于修改密码状态
     output reg led_ok;          //成功
     output reg led_no;          //失败
+    output reg beep;
 
     //状态常数
     parameter in_password_state = 4'b0000;          //状态S0：等待密码状态
@@ -62,7 +63,7 @@ module state_delay(
                     reset <= 0;
                 end
                 warning_state: begin                //警报状态
-                    if(state_count >= state_count_parameter) begin
+                    if(state_count >= state_count_parameter*5) begin
                         reset <= 1;                 //延时结束输出状态机复位信号
                         state_count <= 0;
                     end else begin
@@ -90,54 +91,63 @@ module state_delay(
                 led_change = 0;
                 led_ok = 0;
                 led_no = 0;
+                beep = 1;
             end 
             change_password_state_one: begin
                 led_switch = 1;
                 led_change = 1;
                 led_ok = 0;
                 led_no = 0;
+                beep = 1;
             end 
             change_password_state_two: begin
                 led_switch = 1;
                 led_change = 1;
                 led_ok = 0;
                 led_no = 0;
+                beep = 1;
             end
             warning_state: begin
                 led_switch = 1;
                 led_change = 0;
                 led_ok = 0;
                 led_no = 1;
+                beep = 0;
             end
             switch_state: begin
                 led_switch = 0;
                 led_change = 0;
                 led_ok = 0;
                 led_no = 0;
+                beep = 1;
             end
             password_mistake_state: begin
                 led_switch = 1;
                 led_change = 0;
                 led_ok = 0;
                 led_no = 1;
+                beep = 1;
             end
             change_mistake_state: begin
                 led_switch = 1;
                 led_change = 1;
                 led_ok = 0;
                 led_no = 1;
+                beep = 1;
             end
             change_success_state: begin
                 led_switch = 1;
                 led_change = 1;
                 led_ok = 1;
                 led_no = 0;
+                beep = 1;
             end
             default: begin
                 led_switch = 1;
                 led_change = 0;
                 led_ok = 0;
                 led_no = 0; 
+                beep = 1;
             end
         endcase
     end

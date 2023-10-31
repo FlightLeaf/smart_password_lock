@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module password_in(
-    clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd,ok,change_password
+    clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd
     );
     input clk;
     input clk3k;
@@ -33,8 +33,6 @@ module password_in(
     output reg [7:0] sel;
     output [6:0] dout;
     output reg [23:0] password_bcd = 24'h0;
-    output reg ok = 0;
-    output reg change_password = 0;
 
     wire [7:0] message;
     reg [23:0] data_bcd = 24'hEEEEEE;
@@ -47,23 +45,23 @@ module password_in(
     bluetooth bluetooth(clk,rx,tx,message);
 
     reg [3:0] message_reg = 4'h0;
-    always @(posedge message[7]) begin
-        message_reg[3:0] = message[3:0];
+    always @(posedge message[7] or posedge clear) begin
+        if(clear) begin
+            message_reg[3:0] = 4'hA;
+        end else begin
+            message_reg[3:0] = message[3:0];
+        end
     end
-    always @(negedge message[7] or negedge clear) begin
-        if(!clear) begin
-            ok <= 0;
-            change_password <= 0;
+    always @(negedge message[7] or posedge clear) begin
+        if(clear) begin
             password_bcd <= 24'h000000;
         end else begin
             case (message_reg)
                 4'hA: begin
                     
                 end
-                //全部清空
                 4'hB: begin
-                    password_bcd <= 24'h000000;
-                    count <= 0;
+                    
                 end
                 //倒退一位
                 4'hC: begin
@@ -73,13 +71,13 @@ module password_in(
                     end
                 end
                 4'hD: begin
-                    
+
                 end
                 4'hE: begin
-                    ok <= 1;
+                    
                 end
                 4'hF: begin
-                    change_password <= 1;
+
                 end 
                 default: begin
                     if(count < 6) begin

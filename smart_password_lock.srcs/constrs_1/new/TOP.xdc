@@ -53,6 +53,10 @@ set_property PACKAGE_PIN V14 [get_ports led_ok]
 
 set_property PACKAGE_PIN V15 [get_ports led_switch]
 
+set_property IOSTANDARD LVCMOS33 [get_ports change_password]
+set_property IOSTANDARD LVCMOS33 [get_ports ok]
+set_property PACKAGE_PIN N17 [get_ports change_password]
+set_property PACKAGE_PIN M18 [get_ports ok]
 
-
-
+set_property IOSTANDARD LVCMOS33 [get_ports beep]
+set_property PACKAGE_PIN H14 [get_ports beep]
