@@ -73,7 +73,6 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 set_param simulator.modelsimInstallPath D:/modelsim/win64
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {USF-ModelSim-70}  -string {{ERROR: [USF-ModelSim-70] 'compile' step failed with error(s) while executing 'D:/Desktop/verilog/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
@@ -115,6 +114,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc
 set_property used_in_implementation false [get_files D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc]
+
+read_xdc D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/bcd.xdc
+set_property used_in_implementation false [get_files D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/bcd.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module password_in(
-    clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd
+    clk,clk3k,reset,clear,rx,display,display_max,tx,sel,dout,password_bcd
     );
     input clk;
     input clk3k;
@@ -28,6 +28,7 @@ module password_in(
     input clear;
     input rx;
     input display;
+    input display_max;
     
     output tx;
     output reg [7:0] sel;
@@ -55,6 +56,7 @@ module password_in(
     always @(negedge message[7] or posedge clear) begin
         if(clear) begin
             password_bcd <= 24'h000000;
+            count <= 0;
         end else begin
             case (message_reg)
                 4'hA: begin
@@ -116,8 +118,8 @@ module password_in(
         endcase
     end
 
-    always @(display) begin
-        if(display) begin
+    always @(display or display_max) begin
+        if(display|display_max) begin
             data_bcd <= password_bcd;
         end else begin
             data_bcd <= 24'hEEEEEE;

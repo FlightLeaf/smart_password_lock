@@ -21,7 +21,7 @@
 
 
 module state_delay(
-    clk1k,state_now,rst,reset,led_switch,led_change,led_ok,led_no,beep
+    clk1k,state_now,rst,reset,led_switch,led_change,led_ok,led_no,beep,clear
     );
     input clk1k;                //时钟
     input [3:0] state_now;      //当前状态
@@ -33,7 +33,8 @@ module state_delay(
     output reg led_change;      //是否处于修改密码状态
     output reg led_ok;          //成功
     output reg led_no;          //失败
-    output reg beep;
+    output reg beep;            //蜂鸣器
+    output reg clear = 0;
 
     //状态常数
     parameter in_password_state = 4'b0000;          //状态S0：等待密码状态
@@ -43,7 +44,7 @@ module state_delay(
     parameter switch_state = 4'b0100;               //状态S4：开门状态
     parameter password_mistake_state = 4'b0101;     //状态S5：输入密码开门错误状态
     parameter change_mistake_state = 4'b0110;       //状态S6：修改密码错误状态
-    parameter change_success_state = 4'b1000;       //状态S8：修改密码成功状态
+    parameter change_success_state = 4'b1000;       //状态S7：修改密码成功状态
 
     reg [29:0] state_count = 0;                     //延时计数器
     parameter state_count_parameter = 30'd25000000; //25000000，延时常数

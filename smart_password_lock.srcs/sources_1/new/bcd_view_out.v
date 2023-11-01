@@ -36,6 +36,7 @@ module bcd_view_out(
             sel <= 0;
         end
     end
+    
     /*位选控制*/
     always @(sel) begin
         case (sel)

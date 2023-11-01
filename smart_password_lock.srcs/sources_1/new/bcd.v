@@ -21,18 +21,24 @@
 
 
 module bcd(
-    clk3k,data_bcd,sel,dout
+    clk,data_bcd,sel,dout
     );
-    input clk3k;            //数码管扫描时钟
+    input clk;            //数码管扫描时钟
     input [23:0] data_bcd;
     output [7:0] sel;   //位选数据输出
     output [6:0] dout;      //七段管数据输出
 
-    reg rst = 0;
     reg [7:0] sel_reg;
     wire [2:0] sel_temp;
     wire [3:0] din;
+    reg reset = 0;
+
+    wire clk3k;                 //数码管扫描时钟 1khz 49999
+
+    frequency_division frequency_division(clk,reset,clk3k);
+
     bcd_view_out bcd_view_out(clk3k,data_bcd,sel_temp,din);
+
     always @(sel_temp) begin
         case (sel_temp)
             0:begin

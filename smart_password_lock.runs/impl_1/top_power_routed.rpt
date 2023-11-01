@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Mon Oct 30 22:26:32 2023
+| Date             : Wed Nov  1 09:10:36 2023
 | Host             : xiaoxin running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 18.134 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 22.045 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 17.634                           |
-| Device Static (W)        | 0.500                            |
+| Dynamic (W)              | 21.248                           |
+| Device Static (W)        | 0.797                            |
 | Effective TJA (C/W)      | 4.6                              |
-| Max Ambient (C)          | 2.3                              |
-| Junction Temperature (C) | 107.7                            |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
 | Confidence Level         | Low                              |
 | Setting File             | ---                              |
 | Simulation Activity File | ---                              |
@@ -52,16 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.888 |      704 |       --- |             --- |
-|   LUT as Logic |     0.730 |      286 |     63400 |            0.45 |
-|   BUFG         |     0.060 |        4 |        32 |           12.50 |
-|   CARRY4       |     0.054 |       30 |     15850 |            0.19 |
-|   Register     |     0.043 |      279 |    126800 |            0.22 |
-|   Others       |     0.000 |       24 |       --- |             --- |
-| Signals        |     0.714 |      545 |       --- |             --- |
-| I/O            |    16.032 |       27 |       210 |           12.86 |
-| Static Power   |     0.500 |          |           |                 |
-| Total          |    18.134 |          |           |                 |
+| Slice Logic    |     0.917 |      714 |       --- |             --- |
+|   LUT as Logic |     0.763 |      292 |     63400 |            0.46 |
+|   BUFG         |     0.063 |        4 |        32 |           12.50 |
+|   CARRY4       |     0.048 |       30 |     15850 |            0.19 |
+|   Register     |     0.042 |      283 |    126800 |            0.22 |
+|   F7/F8 Muxes  |    <0.001 |        1 |     63400 |           <0.01 |
+|   Others       |     0.000 |       23 |       --- |             --- |
+| Signals        |     0.836 |      552 |       --- |             --- |
+| I/O            |    19.495 |       27 |       210 |           12.86 |
+| Static Power   |     0.797 |          |           |                 |
+| Total          |    22.045 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,16 +72,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.954 |       1.622 |      0.332 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.647 |       0.587 |      0.061 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     4.536 |       4.532 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     2.336 |       1.773 |      0.563 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.807 |       0.714 |      0.093 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     5.516 |       5.512 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -138,19 +139,19 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| top                     |    17.634 |
-|   eliminate_dithering1  |     0.027 |
-|   eliminate_dithering2  |     0.015 |
-|   frequency_division    |     0.408 |
-|   password_in           |     0.830 |
-|     bcd_view_out        |     0.421 |
-|     bluetooth           |     0.331 |
+| top                     |    21.248 |
+|   eliminate_dithering1  |     0.029 |
+|   eliminate_dithering2  |     0.023 |
+|   frequency_division    |     0.368 |
+|   password_in           |     0.819 |
+|     bcd_view_out        |     0.422 |
+|     bluetooth           |     0.309 |
 |       frequency_1_2     |     0.021 |
-|       uart_r_1          |     0.231 |
-|       uart_t_1          |     0.080 |
-|   state_delay           |     0.107 |
-|   state_machine         |     0.081 |
-|     password_management |     0.008 |
+|       uart_r_1          |     0.220 |
+|       uart_t_1          |     0.069 |
+|   state_delay           |     0.119 |
+|   state_machine         |     0.250 |
+|     password_management |     0.107 |
 +-------------------------+-----------+
 
 

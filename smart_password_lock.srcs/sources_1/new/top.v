@@ -56,6 +56,7 @@ module top(
     wire clear;
     wire ok;
     wire change_password; 
+    wire display_max;
 
     wire ok_eli;
     wire change_password_eli;
@@ -69,16 +70,11 @@ module top(
     //修改密码键消抖
     eliminate_dithering eliminate_dithering2(clk4k,rst,change_password,change_password_eli);
 
-
     //密码输入
-    password_in password_in(clk,clk3k,rst,clear,rx,display,tx,sel,dout,password_reg);
+    password_in password_in(clk,clk3k,rst,clear,rx,display,display_max,tx,sel,dout,password_reg);
 
     //状态机模块
-    state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state);
-    //new_machine new_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state);
-
-    //密码输入延迟关闭
-    //password_in_delay password_in_delay(ok,change_password,rst,clk1k,clear);
+    state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state,display_max);
 
     //特殊状态延时模块
     state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep);
