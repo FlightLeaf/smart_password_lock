@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Wed Nov  1 09:10:36 2023
+| Date         : Wed Nov  1 09:20:36 2023
 | Host         : xiaoxin running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
@@ -41,9 +41,9 @@ Timing Summary Report
 
 Rule       Severity          Description                   Violations  
 ---------  ----------------  ----------------------------  ----------  
-TIMING-17  Critical Warning  Non-clocked sequential cell   225         
+TIMING-17  Critical Warning  Non-clocked sequential cell   226         
 LUTAR-1    Warning           LUT drives async reset alert  48          
-TIMING-20  Warning           Non-clocked latch             58          
+TIMING-20  Warning           Non-clocked latch             57          
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
@@ -53,10 +53,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (576)
+1. checking no_clock (573)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (591)
+4. checking unconstrained_internal_endpoints (590)
 5. checking no_input_delay (4)
 6. checking no_output_delay (19)
 7. checking multiple_clock (0)
@@ -66,7 +66,7 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (3)
 
-1. checking no_clock (576)
+1. checking no_clock (573)
 --------------------------
  There are 47 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
@@ -78,7 +78,7 @@ Table of Contents
 
  There are 8 register/latch pins with no clock driven by root clock pin: eliminate_dithering2/FSM_sequential_state_reg[1]/Q (HIGH)
 
- There are 84 register/latch pins with no clock driven by root clock pin: frequency_division/clk1k_reg/Q (HIGH)
+ There are 85 register/latch pins with no clock driven by root clock pin: frequency_division/clk1k_reg/Q (HIGH)
 
  There are 3 register/latch pins with no clock driven by root clock pin: frequency_division/clk3k_reg/Q (HIGH)
 
@@ -190,13 +190,13 @@ Table of Contents
 
  There are 24 register/latch pins with no clock driven by root clock pin: state_machine/renew_reg/Q (HIGH)
 
- There are 34 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[0]/Q (HIGH)
+ There are 33 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[0]/Q (HIGH)
 
- There are 34 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[1]/Q (HIGH)
+ There are 33 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[1]/Q (HIGH)
 
- There are 34 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[2]/Q (HIGH)
+ There are 33 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[2]/Q (HIGH)
 
- There are 34 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[3]/Q (HIGH)
+ There are 33 register/latch pins with no clock driven by root clock pin: state_machine/state_reg[3]/Q (HIGH)
 
 
 2. checking constant_clock (0)
@@ -209,9 +209,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (591)
+4. checking unconstrained_internal_endpoints (590)
 --------------------------------------------------
- There are 591 pins that are not constrained for maximum delay. (HIGH)
+ There are 590 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

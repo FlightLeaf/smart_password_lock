@@ -77,7 +77,7 @@ module top(
     state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state,display_max);
 
     //特殊状态延时模块
-    state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep);
+    state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep,clear);
 
     
 endmodule

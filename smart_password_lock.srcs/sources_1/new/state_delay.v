@@ -56,28 +56,35 @@ module state_delay(
             case (state_now)
                 in_password_state: begin
                     reset <= 0;
+                    clear <= 0;
                 end 
                 change_password_state_one: begin
                     reset <= 0;
+                    clear <= 0;
                 end 
                 change_password_state_two: begin
                     reset <= 0;
+                    clear <= 0;
                 end
                 warning_state: begin                //警报状态
                     if(state_count >= state_count_parameter*5) begin
                         reset <= 1;                 //延时结束输出状态机复位信号
+                        clear <= 1;
                         state_count <= 0;
                     end else begin
                         reset <= 0;
+                        clear <= 0;
                         state_count <= state_count + 1;
                     end
                 end
                 default: begin                      //其他状态
                     if(state_count >= state_count_parameter) begin
                         reset <= 1;                 //延时结束输出状态机复位信号
+                        clear <= 1;
                         state_count <= 0;
                     end else begin
                         reset <= 0;
+                        clear <= 0;
                         state_count <= state_count + 1;
                     end
                 end 

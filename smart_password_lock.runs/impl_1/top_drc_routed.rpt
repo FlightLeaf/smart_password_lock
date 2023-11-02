@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Wed Nov  1 09:10:33 2023
+| Date         : Wed Nov  1 09:20:34 2023
 | Host         : xiaoxin running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
 | Design       : top
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 31
+             Violations found: 30
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153 | Warning  | Gated clock check                                   | 30         |
+| PDRC-153 | Warning  | Gated clock check                                   | 29         |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -119,12 +119,12 @@ Related violations: <none>
 
 PDRC-153#15 Warning
 Gated clock check  
-Net password_in/password_bcd_reg[22]_0 is a gated clock net sourced by a combinational pin password_in/password_main_reg[22]_LDC_i_1/O, cell password_in/password_main_reg[22]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net password_in/password_bcd_reg[22]_1 is a gated clock net sourced by a combinational pin password_in/password_main_reg[22]_LDC_i_1/O, cell password_in/password_main_reg[22]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#16 Warning
 Gated clock check  
-Net password_in/password_bcd_reg[23]_1 is a gated clock net sourced by a combinational pin password_in/password_main_reg[23]_LDC_i_1/O, cell password_in/password_main_reg[23]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net password_in/password_bcd_reg[23]_0 is a gated clock net sourced by a combinational pin password_in/password_main_reg[23]_LDC_i_1/O, cell password_in/password_main_reg[23]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#17 Warning
@@ -149,7 +149,7 @@ Related violations: <none>
 
 PDRC-153#21 Warning
 Gated clock check  
-Net password_in/password_bcd_reg[6]_0 is a gated clock net sourced by a combinational pin password_in/password_main_reg[6]_LDC_i_1/O, cell password_in/password_main_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net password_in/password_bcd_reg[6]_1 is a gated clock net sourced by a combinational pin password_in/password_main_reg[6]_LDC_i_1/O, cell password_in/password_main_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#22 Warning
@@ -169,30 +169,25 @@ Related violations: <none>
 
 PDRC-153#25 Warning
 Gated clock check  
-Net state_machine/clear_reg_i_2_n_0 is a gated clock net sourced by a combinational pin state_machine/clear_reg_i_2/O, cell state_machine/clear_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net state_machine/passowrd_reg_one__0 is a gated clock net sourced by a combinational pin state_machine/passowrd_reg_one_reg[23]_i_1/O, cell state_machine/passowrd_reg_one_reg[23]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#26 Warning
 Gated clock check  
-Net state_machine/next_state_reg[3]_i_2_n_0 is a gated clock net sourced by a combinational pin state_machine/next_state_reg[3]_i_2/O, cell state_machine/next_state_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net state_machine/password_management/E[0] is a gated clock net sourced by a combinational pin state_machine/password_management/next_state_reg[3]_i_2/O, cell state_machine/password_management/next_state_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#27 Warning
 Gated clock check  
-Net state_machine/passowrd_reg_one__0 is a gated clock net sourced by a combinational pin state_machine/passowrd_reg_one_reg[23]_i_1/O, cell state_machine/passowrd_reg_one_reg[23]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net state_machine/password_management/display_max1_out is a gated clock net sourced by a combinational pin state_machine/password_management/display_max_reg_i_2/O, cell state_machine/password_management/display_max_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#28 Warning
 Gated clock check  
-Net state_machine/password_management/E[0] is a gated clock net sourced by a combinational pin state_machine/password_management/warning_num_reg[2]_i_2/O, cell state_machine/password_management/warning_num_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net state_machine/password_management/result_reg_1[0] is a gated clock net sourced by a combinational pin state_machine/password_management/warning_num_reg[2]_i_2/O, cell state_machine/password_management/warning_num_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#29 Warning
-Gated clock check  
-Net state_machine/password_management/display_max1_out is a gated clock net sourced by a combinational pin state_machine/password_management/display_max_reg_i_2/O, cell state_machine/password_management/display_max_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#30 Warning
 Gated clock check  
 Net state_machine/renew_reg_i_2_n_0 is a gated clock net sourced by a combinational pin state_machine/renew_reg_i_2/O, cell state_machine/renew_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
