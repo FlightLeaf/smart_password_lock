@@ -33,7 +33,7 @@ module password_in(
     output tx;
     output reg [7:0] sel;
     output [6:0] dout;
-    output reg [23:0] password_bcd = 24'h0;
+    output reg [23:0] password_bcd = 24'h000000;
 
     wire [7:0] message;
     reg [23:0] data_bcd = 24'hEEEEEE;

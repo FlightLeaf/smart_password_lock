@@ -49,7 +49,7 @@ module top(
     wire clk3k;                 //数码管扫描时钟 1khz 49999
     wire clk4k;                 //矩阵键盘扫描时钟 50kHz 999
 
-    wire [3:0] state;       //当前状态
+    wire [7:0] state;       //当前状态
     wire reset;                 //状态机复位信号
 
     wire [23:0] password_reg ;         //密码寄存器
@@ -78,6 +78,8 @@ module top(
 
     //特殊状态延时模块
     state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep,clear);
+
+    ila_0 ila_0(clk,ok,change_password,state);
 
     
 endmodule

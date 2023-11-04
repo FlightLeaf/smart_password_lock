@@ -42,6 +42,7 @@ module display_decode (
             9: dout=7'b0000100;
             4'hd: dout=7'b1110110;
             4'he: dout=7'b1111110;
+            4'ha: dout=7'b0000001;
             default: dout=7'b0000000;
         endcase
     end

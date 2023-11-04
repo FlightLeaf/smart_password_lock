@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 set_param simulator.modelsimInstallPath D:/modelsim/win64
@@ -80,8 +81,10 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/Desktop/smart_password_lock/smart_password_lock.cache/wt [current_project]
 set_property parent.project_path D:/Desktop/smart_password_lock/smart_password_lock.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/Desktop/smart_password_lock/smart_password_lock.cache/ip [current_project]
@@ -96,13 +99,18 @@ read_verilog -library xil_defaultlib {
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_1_2.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_division.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/password_in.v
-  D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/password_management.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/state_delay.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/state_machine.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_r.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_t.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v
 }
+read_ip -quiet d:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/ip/ila_0/ila_0.xci
+set_property used_in_synthesis false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -114,9 +122,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc
 set_property used_in_implementation false [get_files D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc]
-
-read_xdc D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/bcd.xdc
-set_property used_in_implementation false [get_files D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/bcd.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

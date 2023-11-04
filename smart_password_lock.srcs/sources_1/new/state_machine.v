@@ -31,31 +31,42 @@ module state_machine(
     input change_password;                          //修改密码按钮
     
     //输出变量
-    output reg [3:0] state = 4'b0000;               //密码锁当前状态 
+    output reg [7:0] state = 8'b00000001;               //密码锁当前状态 
     output reg display_max = 0;
 
     
     //状态常数
-    parameter in_password_state = 4'b0000;          //状态S0：等待密码状态
-    parameter change_password_state_one = 4'b0001;  //状态S1：修改密码状态1
-    parameter change_password_state_two = 4'b0010;  //状态S2：修改密码状态2
-    parameter warning_state = 4'b0011;              //状态S3：警报状态
-    parameter switch_state = 4'b0100;               //状态S4：开门状态
-    parameter password_mistake_state = 4'b0101;     //状态S5：输入密码开门错误状态
-    parameter change_mistake_state = 4'b0110;       //状态S6：修改密码错误状态
-    parameter change_success_state = 4'b1000;       //状态S7：修改密码成功状态
+    parameter in_password_state = 8'b00000001;          //状态S0：等待密码状态
+    parameter change_password_state_one = 8'b00000010;  //状态S1：修改密码状态1
+    parameter change_password_state_two = 8'b00000100;  //状态S2：修改密码状态2
+    parameter warning_state = 8'b00001000;              //状态S3：警报状态
+    parameter switch_state = 8'b00010000;               //状态S4：开门状态
+    parameter password_mistake_state = 8'b00100000;     //状态S5：输入密码开门错误状态
+    parameter change_mistake_state = 8'b01000000;       //状态S6：修改密码错误状态
+    parameter change_success_state = 8'b10000000;       //状态S7：修改密码成功状态
 
     reg [23:0] passowrd_reg_one;
     reg [23:0] passowrd_reg_two;
     reg [23:0] password_main = 24'b000000;
     
     reg renew = 0;
-    wire result_password_manage;
+    reg result;
 
-    reg [3:0] next_state = in_password_state;       //密码锁下一状态
+    reg [7:0] next_state = in_password_state;       //密码锁下一状态
     reg [2:0] warning_num = 3'b000;                 //密码输入错误次数记录
-    password_management password_management(
-        clk,renew,password,result_password_manage);
+
+    always @(posedge clk or posedge renew) begin
+        if (renew) begin
+            password_main <= password;
+            result <= 1;
+        end else begin
+            if(password == password_main) begin
+                result <= 1;
+            end else begin
+                result <= 0;
+            end
+        end
+    end
 
     /*状态机的初始化控制，以及状态的转换*/
     always @(posedge clk or posedge reset) begin
@@ -66,38 +77,36 @@ module state_machine(
         end
     end
 
-    always @(*) begin
+    always @(reset or ok or change_password) begin
         if(reset) begin
             next_state = in_password_state;
+            display_max = 0;
         end else begin
             case (state)
                 in_password_state: begin
-                    if(result_password_manage) begin
-                        case ({ok,change_password})
-                            2'b10:begin
-                                next_state = switch_state;
-                            end
-                            2'b01:begin
+                    if(password_main == password) begin
+                        if(ok) begin
+                            next_state = switch_state;
+                        end else begin
+                            if(change_password) begin
                                 display_max = 1;
                                 next_state = change_password_state_one;
-                            end 
-                            default: begin
-                                
+                            end else begin
+                                renew = 0;
                             end
-                        endcase
+                        end
+
                     end else begin
                         if(ok | change_password) begin
-                            if(warning_num >= 3'b101) begin 
+                            if(warning_num >= 3'b100) begin 
                                 warning_num = 0; 
-                                next_state = warning_state;
-                                                  
+                                next_state = warning_state;                   
                             end else begin
                                 warning_num = warning_num + 1;
                                 next_state = password_mistake_state; 
-                                
                             end
                         end else begin
-                            
+                            renew = 0;
                         end
                     end
                 end 
