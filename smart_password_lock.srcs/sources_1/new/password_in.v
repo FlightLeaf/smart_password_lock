@@ -33,7 +33,7 @@ module password_in(
     output tx;
     output reg [7:0] sel;
     output [6:0] dout;
-    output reg [23:0] password_bcd = 24'h000000;
+    output reg [23:0] password_bcd = 24'haaaaaa;
 
     wire [7:0] message;
     reg [23:0] data_bcd = 24'hEEEEEE;
@@ -55,7 +55,7 @@ module password_in(
     end
     always @(negedge message[7] or posedge clear) begin
         if(clear) begin
-            password_bcd <= 24'h000000;
+            password_bcd <= 24'haaaaaa;
             count <= 0;
         end else begin
             case (message_reg)

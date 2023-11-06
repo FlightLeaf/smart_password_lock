@@ -74,12 +74,12 @@ module top(
     password_in password_in(clk,clk3k,rst,clear,rx,display,display_max,tx,sel,dout,password_reg);
 
     //状态机模块
-    state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state,display_max);
+    state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state,display_max,clear);
 
     //特殊状态延时模块
-    state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep,clear);
+    state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep);
 
-    ila_0 ila_0(clk,ok,change_password,state);
+    ila_0 ila_0(clk,state,ok,change_password);
 
     
 endmodule

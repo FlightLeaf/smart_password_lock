@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {USF-ModelSim-70}  -string {{ERROR: [USF-ModelSim-70] 'compile' step failed with error(s) while executing 'D:/Desktop/verilog/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -141,7 +142,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/top.dcp
-  read_ip -quiet d:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/ip/ila_0/ila_0.xci
+  read_ip -quiet D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/ip/ila_0/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc
 OPTRACE "read constraints: implementation" END { }
