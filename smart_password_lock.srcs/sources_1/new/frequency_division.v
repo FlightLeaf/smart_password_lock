@@ -28,7 +28,7 @@ module frequency_division(
     output reg clk1k = 0;       //状态转换时钟 10MHz 4
     output reg clk2k = 0;       //消抖时钟 1Mhz 49
     output reg clk3k = 0;       //数码扫描时钟 1khz 49999
-    output reg clk4k = 0;       //矩阵键盘扫描时钟 50kHz 999
+    output reg clk4k = 0;       //
 
 
     reg [15:0] count1 = 0;
@@ -74,7 +74,7 @@ module frequency_division(
     end
 
     reg [31:0] count4 = 0;
-    parameter COUNT4 = 32'd4999999;     //4999999
+    parameter COUNT4 = 32'd499999;     //499999
     always @(posedge clk or posedge reset) begin
         if(reset) begin
             count4 <= 0;

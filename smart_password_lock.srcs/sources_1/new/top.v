@@ -19,8 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-//clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd
-
 module top(
     clk,rst,ok,change_password,rx,display,
     led_switch,led_change,led_ok,led_no,tx,sel,dout,beep
@@ -49,17 +47,16 @@ module top(
     wire clk3k;                 //数码管扫描时钟 1khz 49999
     wire clk4k;                 //矩阵键盘扫描时钟 50kHz 999
 
-    wire [7:0] state;       //当前状态
+    wire [7:0] state;           //当前状态
     wire reset;                 //状态机复位信号
+    wire [23:0] password_reg ;  //密码寄存器
+    wire clear;                 //清除密码信号
+    wire ok;                    //确认键信号
+    wire change_password;       //修改密码信号
+    wire display_max;           //修改密码长期显示
 
-    wire [23:0] password_reg ;         //密码寄存器
-    wire clear;
-    wire ok;
-    wire change_password; 
-    wire display_max;
-
-    wire ok_eli;
-    wire change_password_eli;
+    wire ok_eli;                //消抖后的确认信号
+    wire change_password_eli;   //消抖后的修改密码信号
 
     //分频模块
     frequency_division frequency_division(clk,rst,clk1k,clk2k,clk3k,clk4k);
@@ -74,12 +71,13 @@ module top(
     password_in password_in(clk,clk3k,rst,clear,rx,display,display_max,tx,sel,dout,password_reg);
 
     //状态机模块
-    state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state,display_max);
+    state_machine state_machine(clk1k,reset,password_reg,ok_eli,change_password_eli,state,display_max,clear);
 
     //特殊状态延时模块
-    state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep,clear);
+    state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep);
 
-    ila_0 ila_0(clk,ok,change_password,state);
+    //DEBUG探针
+    //ila_0 ila_0(clk,state,ok,change_password);
 
     
 endmodule

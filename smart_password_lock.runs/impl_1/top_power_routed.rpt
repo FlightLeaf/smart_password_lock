@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Thu Nov  2 09:19:04 2023
+| Date             : Mon Nov  6 18:54:28 2023
 | Host             : xiaoxin running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.108        |
+| Total On-Chip Power (W)  | 0.107        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.011        |
+| Dynamic (W)              | 0.010        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |    <0.001 |        3 |       --- |             --- |
-| Slice Logic              |    <0.001 |     9183 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     2721 |     63400 |            4.29 |
-|   Register               |    <0.001 |     4480 |    126800 |            3.53 |
-|   CARRY4                 |    <0.001 |      160 |     15850 |            1.01 |
+| Clocks                   |     0.001 |        3 |       --- |             --- |
+| Slice Logic              |    <0.001 |     9053 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |     2672 |     63400 |            4.21 |
+|   Register               |    <0.001 |     4432 |    126800 |            3.50 |
+|   CARRY4                 |    <0.001 |      158 |     15850 |            1.00 |
 |   LUT as Distributed RAM |    <0.001 |      152 |     19000 |            0.80 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
 |   LUT as Shift Register  |    <0.001 |      289 |     19000 |            1.52 |
 |   F7/F8 Muxes            |    <0.001 |       92 |     63400 |            0.15 |
-|   Others                 |     0.000 |      570 |       --- |             --- |
-| Signals                  |     0.001 |     6406 |       --- |             --- |
+|   Others                 |     0.000 |      567 |       --- |             --- |
+| Signals                  |     0.001 |     6315 |       --- |             --- |
 | Block RAM                |    <0.001 |      4.5 |       135 |            3.33 |
-| I/O                      |     0.008 |       27 |       210 |           12.86 |
+| I/O                      |     0.007 |       27 |       210 |           12.86 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.108 |          |           |                 |
+| Total                    |     0.107 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -145,10 +145,10 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| top                      |     0.011 |
-|   dbg_hub                |     0.001 |
-|     inst                 |     0.001 |
-|       BSCANID.u_xsdbm_id |     0.001 |
+| top                      |     0.010 |
+|   dbg_hub                |     0.002 |
+|     inst                 |     0.002 |
+|       BSCANID.u_xsdbm_id |     0.002 |
 +--------------------------+-----------+
 
 

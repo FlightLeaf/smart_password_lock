@@ -21,18 +21,20 @@
 
 
 module state_machine(
-    clk,reset,password,ok,change_password,state,display_max
+    clk,reset,password,ok,change_password,state,display_max,clear
     );
     //输入变量
     input clk;                                      //时钟
     input reset;                                    //复位键
     input [23:0] password;                          //密码或者是修改密码中的输入
+
     input ok;                                       //确认按钮
     input change_password;                          //修改密码按钮
     
     //输出变量
     output reg [7:0] state = 8'b00000001;               //密码锁当前状态 
     output reg display_max = 0;
+    output reg clear = 0;
 
     
     //状态常数
@@ -48,95 +50,81 @@ module state_machine(
     reg [23:0] passowrd_reg_one;
     reg [23:0] passowrd_reg_two;
     reg [23:0] password_main = 24'b000000;
-    
-    reg renew = 0;
-    reg result;
 
-    reg [7:0] next_state = in_password_state;       //密码锁下一状态
     reg [2:0] warning_num = 3'b000;                 //密码输入错误次数记录
 
-    always @(posedge clk or posedge renew) begin
-        if (renew) begin
-            password_main <= password;
-            result <= 1;
+    ///密码临时寄存器
+    reg [23:0] password_reg = 24'hxxxxxx;
+    always @(posedge clk) begin
+        password_reg <= password;
+    end
+
+    reg password_result = 0;
+    always @(posedge clk) begin
+        if(password_main == password_reg)begin
+            password_result <= 1;
         end else begin
-            if(password == password_main) begin
-                result <= 1;
-            end else begin
-                result <= 0;
-            end
+            password_result <= 0;
         end
     end
 
-    /*状态机的初始化控制，以及状态的转换*/
     always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            state <= in_password_state;
-        end else begin
-            state <= next_state;
-        end
-    end
-
-    always @(reset or ok or change_password) begin
         if(reset) begin
-            next_state = in_password_state;
-            display_max = 0;
-        end else begin
+            clear <= 0;
+            display_max <= 0;
+            state <= in_password_state;
+        end else if(ok) begin
             case (state)
-                in_password_state: begin
-                    if(password_main == password) begin
-                        if(ok) begin
-                            next_state = switch_state;
-                        end else begin
-                            if(change_password) begin
-                                display_max = 1;
-                                next_state = change_password_state_one;
-                            end else begin
-                                renew = 0;
-                            end
-                        end
-
+                in_password_state:begin
+                    if(password_result)begin
+                        state <= switch_state;
+                        clear <= 1;
                     end else begin
-                        if(ok | change_password) begin
-                            if(warning_num >= 3'b100) begin 
-                                warning_num = 0; 
-                                next_state = warning_state;                   
-                            end else begin
-                                warning_num = warning_num + 1;
-                                next_state = password_mistake_state; 
-                            end
+                        if(warning_num >= 3'b011) begin 
+                            warning_num <= 0; 
+                            state <= warning_state; 
+                            clear <= 1;                  
                         end else begin
-                            renew = 0;
+                            warning_num <= warning_num + 1;
+                            state <= password_mistake_state;
+                            clear <= 1; 
                         end
                     end
                 end 
                 change_password_state_one: begin
-                    if(ok) begin
-                        passowrd_reg_one = password;    //密码存入寄存器
-                        next_state = change_password_state_two;    //进入二次输入状态
-                    end else begin
-                        renew = 0;
-                    end
-                end 
-                change_password_state_two: begin
-                    if(ok) begin
-                        if(passowrd_reg_one == password)begin
-                            renew = 1;
-                            display_max = 0;
-                            next_state = change_success_state;
-                        end else begin
-                            display_max = 0;
-                            next_state = change_mistake_state; 
-                        end
-                    end else begin
-                        renew = 0;
-                    end
+                    password_main <= password_reg;
+                    state <= change_success_state;
+                    clear <= 1; 
                 end 
                 default: begin
-                    renew = 0;
+                    display_max <= 0;
                 end
             endcase
+        end else if(change_password) begin
+            case (state)
+                in_password_state:begin
+                    if(password_result)begin
+                        display_max <= 1;
+                        state <= change_password_state_one;
+                        clear <= 1;
+                    end else begin
+                        if(warning_num >= 3'b011) begin 
+                            warning_num <= 0; 
+                            state <= warning_state;
+                            clear <= 1;                   
+                        end else begin
+                            warning_num <= warning_num + 1;
+                            state <= password_mistake_state; 
+                            clear <= 1;
+                        end
+                    end
+                end
+                default: begin
+                    
+                end
+            endcase
+        end else begin
+            clear <= 0;
         end
-        
     end
 endmodule

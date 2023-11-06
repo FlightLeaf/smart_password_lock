@@ -31,8 +31,7 @@ module uart_r(
     reg [7:0]message_mid=0;                             //message的前体，在over的下降沿传递给message，避免传递没结束，message就有输出值了
     reg r_start=1;                                      //判断第一个0位，表示传递开始
    
-    always @(posedge clk)
-    begin
+    always @(posedge clk)begin
         if (rx==0&&r_start==1) begin
             cnt_clk<=cnt_clk+1;
             if (cnt_clk==2604&&rx==0) begin

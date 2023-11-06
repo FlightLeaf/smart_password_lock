@@ -19,16 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+//产生位选信号和24位BCD码分割模块
 module bcd_view_out(
     clk3k,data_bcd,sel_temp,dout
     );
     input clk3k;                //数码管扫描时钟
     input [23:0] data_bcd;      //BCD待显示数据输入
-    output [2:0] sel_temp;   //位选信号
+    output [2:0] sel_temp;      //位选信号
     output reg [3:0] dout;      //输出信号
 
-    reg [2:0] sel = 0;
+    reg [2:0] sel = 0;          //当前位寄存器
+    ///当前位快速切换实现动态显示
     always @(posedge clk3k) begin
         if(sel < 5) begin
             sel <= sel + 1;
@@ -37,8 +38,9 @@ module bcd_view_out(
         end
     end
     
-    /*位选控制*/
+    ///位选控制
     always @(sel) begin
+        //对应不同的位赋不同的值
         case (sel)
             0:begin
                 dout <= data_bcd[23:20];
