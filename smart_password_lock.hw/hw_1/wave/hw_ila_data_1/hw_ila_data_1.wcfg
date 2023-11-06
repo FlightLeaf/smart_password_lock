@@ -14,7 +14,11 @@
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
+<<<<<<< HEAD
       <NameColumnWidth column_width="172"></NameColumnWidth>
+=======
+      <NameColumnWidth column_width="178"></NameColumnWidth>
+>>>>>>> e32c6291e31fa9240e9aa44030dc994cb978d3b8
       <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="4" />
