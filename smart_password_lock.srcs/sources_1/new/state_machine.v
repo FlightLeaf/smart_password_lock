@@ -79,6 +79,7 @@ module state_machine(
                     if(password_result)begin
                         state <= switch_state;
                         clear <= 1;
+                        warning_num <= 0; 
                     end else begin
                         if(warning_num >= 3'b011) begin 
                             warning_num <= 0; 
@@ -107,6 +108,7 @@ module state_machine(
                         display_max <= 1;
                         state <= change_password_state_one;
                         clear <= 1;
+                        warning_num <= 0; 
                     end else begin
                         if(warning_num >= 3'b011) begin 
                             warning_num <= 0; 

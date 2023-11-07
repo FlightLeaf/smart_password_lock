@@ -33,10 +33,11 @@ module password_in(
     output tx;                      //返回蓝牙模块 确认无误
     output reg [7:0] sel;           //位选信号输出
     output [6:0] dout;              //数码管译码输出
-    output reg [23:0] password_bcd = 24'haaaaaa;    //默认密码（显示为000000）
+    output reg [23:0] password_bcd = 24'hffffff;    //默认密码（显示为000000）
 
     wire [7:0] message;             //接收到的信息
-    reg [23:0] data_bcd = 24'hEEEEEE;   //默认显示的横线
+    reg [23:0] data_bcd = 24'hEEEEEE;   //默认不显示
+    reg [23:0] bcd_sel_temp = 24'hEEEEEE; //未输入不显示
     
 
     wire [2:0] sel_temp;            //储存当前显示的位数的寄存器，产生位选信号
@@ -56,7 +57,8 @@ module password_in(
     //检测并移位进入密码寄存器
     always @(negedge message[7] or posedge clear) begin
         if(clear) begin
-            password_bcd <= 24'haaaaaa;
+            password_bcd <= 24'hffffff;
+            bcd_sel_temp <= 24'heeeeee;
             count <= 0;
         end else begin
             case (message_reg)
@@ -70,7 +72,8 @@ module password_in(
                 4'hC: begin
                     if(count > 3'b000) begin
                         count <= count - 1;//倒退一位
-                        password_bcd <= {4'h0,password_bcd[23:4]};
+                        password_bcd <= {4'hf,password_bcd[23:4]};
+                        bcd_sel_temp <= {4'he,bcd_sel_temp[23:4]};
                     end
                 end
                 4'hD: begin
@@ -86,6 +89,7 @@ module password_in(
                     if(count < 6) begin
                         count <= count + 1;//添加一位
                         password_bcd <= {password_bcd,message_reg};
+                        bcd_sel_temp <= {bcd_sel_temp,4'hf};
                     end
                 end
             endcase
@@ -120,11 +124,11 @@ module password_in(
     end
 
     //显示使能控制
-    always @(display or display_max) begin
+    always @(posedge clk or posedge display or posedge display_max) begin
         if(display|display_max) begin//display_max 长期显示
             data_bcd <= password_bcd;
         end else begin
-            data_bcd <= 24'hEEEEEE;
+            data_bcd <= bcd_sel_temp;
         end
     end
 

@@ -70,11 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 set_param simulator.modelsimInstallPath D:/modelsim/win64
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {USF-ModelSim-70}  -string {{ERROR: [USF-ModelSim-70] 'compile' step failed with error(s) while executing 'D:/Desktop/verilog/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
@@ -82,10 +80,8 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/Desktop/smart_password_lock/smart_password_lock.cache/wt [current_project]
 set_property parent.project_path D:/Desktop/smart_password_lock/smart_password_lock.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/Desktop/smart_password_lock/smart_password_lock.cache/ip [current_project]
@@ -106,12 +102,6 @@ read_verilog -library xil_defaultlib {
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_t.v
   D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v
 }
-read_ip -quiet D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
-
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

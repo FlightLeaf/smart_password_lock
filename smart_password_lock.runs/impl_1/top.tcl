@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {USF-ModelSim-70}  -string {{ERROR: [USF-ModelSim-70] 'compile' step failed with error(s) while executing 'D:/Desktop/verilog/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -124,7 +123,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.collectionResultDisplayLimit 0
   set_param chipscope.maxJobs 2
   set_param xicom.use_bs_reader 1
   set_param simulator.modelsimInstallPath D:/modelsim/win64
@@ -138,11 +136,9 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path D:/Desktop/smart_password_lock/smart_password_lock.xpr [current_project]
   set_property ip_output_repo D:/Desktop/smart_password_lock/smart_password_lock.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/top.dcp
-  read_ip -quiet D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/ip/ila_0/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc
 OPTRACE "read constraints: implementation" END { }
@@ -309,7 +305,6 @@ set rc [catch {
   create_msg_db write_bitstream.pb
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi top.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }

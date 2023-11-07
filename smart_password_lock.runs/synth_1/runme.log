@@ -17,11 +17,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 34468
+INFO: [Synth 8-7075] Helper process launched with PID 14568
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1134.578 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:24]
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:22]
 INFO: [Synth 8-6157] synthesizing module 'frequency_division' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_division.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'frequency_division' (1#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/frequency_division.v:23]
 INFO: [Synth 8-6157] synthesizing module 'eliminate_dithering' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/eliminate_dithering.v:23]
@@ -36,9 +36,8 @@ INFO: [Synth 8-6155] done synthesizing module 'uart_r' (4#1) [D:/Desktop/smart_p
 INFO: [Synth 8-6157] synthesizing module 'uart_t' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_t.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'uart_t' (5#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/uart_t.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'bluetooth' (6#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bluetooth.v:23]
-WARNING: [Synth 8-567] referenced signal 'password_bcd' should be on the sensitivity list [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/password_in.v:121]
 INFO: [Synth 8-6157] synthesizing module 'bcd_view_out' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bcd_view_out.v:23]
-WARNING: [Synth 8-567] referenced signal 'data_bcd' should be on the sensitivity list [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bcd_view_out.v:41]
+WARNING: [Synth 8-567] referenced signal 'data_bcd' should be on the sensitivity list [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bcd_view_out.v:42]
 INFO: [Synth 8-6155] done synthesizing module 'bcd_view_out' (7#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/bcd_view_out.v:23]
 INFO: [Synth 8-6157] synthesizing module 'display_decode' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/display_decode.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'display_decode' (8#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/display_decode.v:23]
@@ -47,61 +46,50 @@ INFO: [Synth 8-6157] synthesizing module 'state_machine' [D:/Desktop/smart_passw
 INFO: [Synth 8-6155] done synthesizing module 'state_machine' (10#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/state_machine.v:23]
 INFO: [Synth 8-6157] synthesizing module 'state_delay' [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/state_delay.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'state_delay' (11#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/state_delay.v:23]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:82]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/.Xil/Vivado-36648-xiaoxin/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (12#1) [D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/.Xil/Vivado-36648-xiaoxin/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'state_machine'. This will prevent further optimization [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:77]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:82]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'state_delay'. This will prevent further optimization [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:80]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'eliminate_dithering1'. This will prevent further optimization [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:68]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'eliminate_dithering2'. This will prevent further optimization [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:71]
-INFO: [Synth 8-6155] done synthesizing module 'top' (13#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'top' (12#1) [D:/Desktop/smart_password_lock/smart_password_lock.srcs/sources_1/new/top.v:22]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1134.578 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1134.578 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1134.578 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1134.578 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1134.828 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila_0'
-Finished Parsing XDC File [d:/Desktop/smart_password_lock/smart_password_lock.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila_0'
 Parsing XDC File [D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc]
 Finished Parsing XDC File [D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Desktop/smart_password_lock/smart_password_lock.srcs/constrs_1/new/TOP.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1158.160 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1134.828 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1158.160 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for ila_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'eliminate_dithering'
 ---------------------------------------------------------------------------------------------------
@@ -114,7 +102,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'elimi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'eliminate_dithering'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -127,7 +115,7 @@ Detailed RTL Component Info :
 	   2 Input    3 Bit       Adders := 4     
 +---Registers : 
 	               30 Bit    Registers := 1     
-	               24 Bit    Registers := 3     
+	               24 Bit    Registers := 5     
 	               13 Bit    Registers := 2     
 	                8 Bit    Registers := 3     
 	                5 Bit    Registers := 2     
@@ -137,23 +125,23 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input   30 Bit        Muxes := 3     
 	   5 Input   30 Bit        Muxes := 1     
-	   2 Input   24 Bit        Muxes := 2     
-	   7 Input   24 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 4     
+	   7 Input   24 Bit        Muxes := 2     
 	   2 Input   13 Bit        Muxes := 6     
 	   2 Input    8 Bit        Muxes := 9     
 	   7 Input    8 Bit        Muxes := 1     
 	   3 Input    8 Bit        Muxes := 1     
 	   3 Input    6 Bit        Muxes := 2     
 	   2 Input    5 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 3     
 	   7 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 8     
-	   4 Input    1 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 33    
+	   4 Input    1 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 30    
 	   5 Input    1 Bit        Muxes := 3     
 	   7 Input    1 Bit        Muxes := 1     
-	   3 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 2     
 	   9 Input    1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -171,25 +159,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:20 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -207,93 +195,90 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |ila_0         |         1|
-+------+--------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |ila    |     1|
-|2     |BUFG   |     3|
-|3     |CARRY4 |    28|
-|4     |LUT1   |     6|
-|5     |LUT2   |    51|
-|6     |LUT3   |    53|
-|7     |LUT4   |    36|
-|8     |LUT5   |    31|
-|9     |LUT6   |    89|
-|10    |MUXF7  |     1|
-|11    |FDCE   |    74|
-|12    |FDPE   |    16|
-|13    |FDRE   |   140|
-|14    |FDSE   |     1|
-|15    |IBUF   |     6|
-|16    |OBUF   |    21|
+|1     |BUFG   |     4|
+|2     |CARRY4 |    27|
+|3     |LUT1   |     4|
+|4     |LUT2   |    73|
+|5     |LUT3   |   107|
+|6     |LUT4   |    42|
+|7     |LUT5   |    41|
+|8     |LUT6   |    76|
+|9     |FDCE   |    88|
+|10    |FDPE   |    34|
+|11    |FDRE   |   140|
+|12    |FDSE   |     1|
+|13    |LDC    |    24|
+|14    |IBUF   |     6|
+|15    |OBUF   |    21|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 1158.160 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.160 ; gain = 23.582
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1134.828 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1134.828 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1167.855 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1139.793 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1176.477 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1151.410 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 24 instances were transformed.
+  LDC => LDCE: 24 instances
 
-Synth Design complete, checksum: 164ad085
+Synth Design complete, checksum: 64e72ac7
 INFO: [Common 17-83] Releasing license: Synthesis
-49 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+42 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:39 . Memory (MB): peak = 1176.477 ; gain = 41.898
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 1151.410 ; gain = 16.582
 INFO: [Common 17-1381] The checkpoint 'D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Nov  6 18:51:09 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  7 08:37:07 2023...
