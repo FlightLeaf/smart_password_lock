@@ -25,7 +25,7 @@ module uart_t(
     input clk,
     output reg tx=1,
     input wire run
-    );                                                                  //大致思路与输入类似，tx连接蓝牙的rx，注意run信号为开始信号，连接的输入的over信号
+    );        //大致思路与输入类似，tx连接蓝牙的rx，注意run信号为开始信号，连接的输入的over信号
 
     reg [12:0]cnt_clk=0;
     reg [4:0]cnt_message=0;

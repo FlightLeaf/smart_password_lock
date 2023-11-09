@@ -29,23 +29,23 @@ module password_in_tb(
     reg clear;
     reg rx;
     reg display;
+    reg display_max;
     
     wire tx;
     wire [7:0] sel;
     wire [6:0] dout;
     wire [23:0] password_bcd;
-    wire ok;
-    wire change_password;
 
-    password_in password_in(clk,clk3k,reset,clear,rx,display,tx,sel,dout,password_bcd,ok,change_password);
+    password_in password_in(clk,clk3k,reset,clear,rx,display,display_max,tx,sel,dout,password_bcd);//clk,clk3k,reset,clear,rx,display,display_max,tx,sel,dout,password_bcd
 
     initial begin
         clk = 1;
         clk3k = 1;
         reset = 0;
-        clear = 1;
+        clear = 0;
         rx = 0;
-        display = 1;
+        display = 0;
+        display_max = 0;
     end
     always begin
         #1;clk = ~clk;
@@ -54,49 +54,19 @@ module password_in_tb(
         #5;clk3k = ~clk3k;
     end
     initial begin
+        #3;
+        display = 1;
+        clear = 0;
+        #10;
+        clear = 1;
+        #10;
+        clear = 0;
+        #10;
         rx = 1;
         #20832;
         rx = 0;
         #20832;
-
-        rx = 0;
-        #20832;
-        rx = 1;
-        #20832;
-        rx = 1;
-        #20832;
-        rx = 1;
-        #20832;
-
-        rx = 1;
-        #20832;
-        rx = 1;
-        #20832;
-        rx = 1;
-        #20832;
-        rx = 1;
-        #20832;
-
-        rx = 0;
-        #20832;
-        rx = 1;
-
         
-
-        rx = 1;
-        #20832;
-        rx = 0;
-        #20832;
-
-        rx = 0;
-        #20832;
-        rx = 1;
-        #20832;
-        rx = 1;
-        #20832;
-        rx = 1;
-        #20832;
-
         rx = 0;
         #20832;
         rx = 0;
@@ -106,8 +76,47 @@ module password_in_tb(
         rx = 0;
         #20832;
 
+        rx = 1;
+        #20832;
+        rx = 1;
+        #20832;
+        rx = 1;
+        #20832;
+        rx = 1;
+        #20832;
+
         rx = 0;
         #20832;
         rx = 1;
+        #20832;
+        
+        rx = 1;
+        #20832;
+        rx = 0;
+        #20832;
+        
+        rx = 0;
+        #20832;
+        rx = 0;
+        #20832;
+        rx = 0;
+        #20832;
+        rx = 0;
+        #20832;
+
+        rx = 0;
+        #20832;
+        rx = 0;
+        #20832;
+        rx = 0;
+        #20832;
+        rx = 0;
+        #20832;
+
+        rx = 0;
+        #20832;
+        rx = 1;
+        #20832;
+        
     end
 endmodule

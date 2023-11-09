@@ -28,6 +28,15 @@ R2
 n@_opt1
 R3
 R0
+T_opt2
+!s110 1699489928
+V[clWd;mmjiEGJ;DzQgN`g2
+04 14 4 work password_in_tb fast 0
+R1
+=1-28d0ea608560-654c2885-309-4224
+R2
+n@_opt2
+R3
 vbcd
 !s10a 1697299690
 Z4 !s110 1697300495
@@ -51,7 +60,7 @@ Z10 !s90 -incr|-mfcu|-work|xil_defaultlib|../../../../smart_password_lock.srcs/s
 Z11 o-mfcu -work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vbcd_tb
 !s10a 1697288024
-Z12 !s110 1697289122
+!s110 1697289122
 !i10b 1
 !s100 bXLcF?ndU@lnBkomnX6cJ0
 Ig`_5I3B3NlOUNFk^ISGWP2
@@ -65,9 +74,9 @@ R7
 r1
 !s85 0
 31
-Z13 !s108 1697289122.270000
-Z14 !s107 ../../../../smart_password_lock.srcs/sim_1/new/bcd_tb.v|../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v|
-Z15 !s90 -incr|-mfcu|-work|xil_defaultlib|../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v|../../../../smart_password_lock.srcs/sim_1/new/bcd_tb.v|
+!s108 1697289122.270000
+!s107 ../../../../smart_password_lock.srcs/sim_1/new/bcd_tb.v|../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v|
+!s90 -incr|-mfcu|-work|xil_defaultlib|../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v|../../../../smart_password_lock.srcs/sim_1/new/bcd_tb.v|
 !i113 0
 R11
 vbcd_tb_tb
@@ -92,14 +101,13 @@ R10
 !i113 0
 R11
 vbcd_view_out
-!s10a 1697285471
-R12
+Z12 !s110 1699489916
 !i10b 1
-!s100 M25O>^kKfO@4l89eA2MQD0
-IeiWC=X[DJk?lZ14czDbkd1
+!s100 aJO0WN[37YDg[K[o;;o3I2
+IS9iN:FQGC6zL4U[hD:nDn2
 R5
-R0
-w1697285471
+Z13 dD:/Desktop/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim
+w1699276811
 8../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v
 F../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v
 R6
@@ -107,19 +115,19 @@ R7
 r1
 !s85 0
 31
-R13
-R14
-R15
+Z14 !s108 1699489916.840000
+Z15 !s107 ../../../../smart_password_lock.srcs/sim_1/new/password_in_tb.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/password_in.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/display_decode.v|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v|
+Z16 !s90 -incr|-mfcu|-work|xil_defaultlib|../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|../../../../smart_password_lock.srcs/sources_1/new/display_decode.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/password_in.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sim_1/new/password_in_tb.v|
 !i113 0
 R11
 vbluetooth
-Z16 !s110 1698146200
+R12
 !i10b 1
-!s100 =MeQH_>C8c0z>^k3<B9Si1
-I:g1@fOR8GaCBV7MKjCC1J2
+!s100 FdBY8FNX>9j=XO512^X^J1
+Ioz6nEkzeSP[H0n`M465z>1
 R5
-Z17 dD:/Desktop/smart_password_lock/smart_password_lock.sim/sim_1/behav/modelsim
-w1698143665
+R13
+w1699318158
 8../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v
 F../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v
 R6
@@ -127,20 +135,19 @@ R7
 r1
 !s85 0
 31
-Z18 !s108 1698146200.212000
-Z19 !s107 ../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|
-Z20 !s90 -incr|-mfcu|-work|xil_defaultlib|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v|
+R14
+R15
+R16
 !i113 0
 R11
 vdisplay_decode
-!s10a 1697299228
-R4
+R12
 !i10b 1
-!s100 m2JG@g]>bG2kFDOBbbFP41
-I9kR>B]:j_CE@zj_oF;H<61
+!s100 >`TCB6nRkFDandg@S`m2U0
+I8U48ec>8@Q:EL>>Nf2gQk3
 R5
-R0
-w1697299228
+R13
+w1699316452
 8../../../../smart_password_lock.srcs/sources_1/new/display_decode.v
 F../../../../smart_password_lock.srcs/sources_1/new/display_decode.v
 R6
@@ -148,18 +155,19 @@ R7
 r1
 !s85 0
 31
-R8
-R9
-R10
+R14
+R15
+R16
 !i113 0
 R11
 vfrequency_1_2
-R16
+!s10a 1698143264
+Z17 !s110 1698146200
 !i10b 1
 !s100 DcYAj5;3YWUQJn]@[onWN2
 IVdhZE_gGY4i?R_>bU<D_D3
 R5
-R17
+R13
 w1698143264
 8../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v
 F../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v
@@ -168,9 +176,9 @@ R7
 r1
 !s85 0
 31
-R18
-R19
-R20
+Z18 !s108 1698146200.212000
+Z19 !s107 ../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|
+Z20 !s90 -incr|-mfcu|-work|xil_defaultlib|../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v|../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v|../../../../smart_password_lock.srcs/sources_1/new/uart_r.v|../../../../smart_password_lock.srcs/sources_1/new/uart_t.v|../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v|
 !i113 0
 R11
 vfrequency_division
@@ -194,12 +202,12 @@ R10
 !i113 0
 R11
 vglbl
-R16
+!s110 1699489917
 !i10b 1
 !s100 aGX4R92RO3^bD43HL2j:J2
 I5GBkB2^BD7zJ]g29CKF3T3
 R5
-R17
+R13
 w1623370582
 8glbl.v
 Fglbl.v
@@ -208,18 +216,58 @@ R7
 r1
 !s85 0
 31
-!s108 1698146200.460000
+!s108 1699489917.020000
 !s107 glbl.v|
 !s90 -work|xil_defaultlib|glbl.v|
 !i113 0
 o-work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-vtestbench
+vpassword_in
+R12
+!i10b 1
+!s100 PWR7f;KSz30@@NDgO<e]c2
+Io:GRL@YF[PAP=EkcmOP`L0
+R5
+R13
+w1699317370
+8../../../../smart_password_lock.srcs/sources_1/new/password_in.v
+F../../../../smart_password_lock.srcs/sources_1/new/password_in.v
+Z21 L0 22
+R7
+r1
+!s85 0
+31
+R14
+R15
 R16
+!i113 0
+R11
+vpassword_in_tb
+R12
+!i10b 1
+!s100 3IK5hm;[oMfNNEDk>ccC60
+ISKdE8QbkMz87af6nF=4f?3
+R5
+R13
+w1699489331
+8../../../../smart_password_lock.srcs/sim_1/new/password_in_tb.v
+F../../../../smart_password_lock.srcs/sim_1/new/password_in_tb.v
+R6
+R7
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 0
+R11
+vtestbench
+R17
 !i10b 1
 !s100 bdg88e@M]h>3``M]2UYBi0
 I?DF]UVRXNdhh1Hb;b^7]63
 R5
-R17
+R13
 w1698146093
 8../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v
 F../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v
@@ -234,33 +282,34 @@ R20
 !i113 0
 R11
 vuart_r
-R16
+R12
 !i10b 1
-!s100 Ze1E[:[OPjaHOACi>ze7o0
-IcEz?5ajVV6z;W9JGJGE@V1
+!s100 >bmGSWO?DWe]a:OY`^Eh<1
+I872C5cFYYY@fZh7jRz8]T3
 R5
-R17
-Z21 w1698141762
+R13
+w1699147718
 8../../../../smart_password_lock.srcs/sources_1/new/uart_r.v
 F../../../../smart_password_lock.srcs/sources_1/new/uart_r.v
-L0 22
+R21
 R7
 r1
 !s85 0
 31
-R18
-R19
-R20
+R14
+R15
+R16
 !i113 0
 R11
 vuart_t
-R16
+!s10a 1699358534
+R17
 !i10b 1
 !s100 d@?^9X1<ObiF7zCV?YZ]M2
 IHomDYmQQjX?739T_RO?fU1
 R5
-R17
-R21
+R13
+w1698141762
 8../../../../smart_password_lock.srcs/sources_1/new/uart_t.v
 F../../../../smart_password_lock.srcs/sources_1/new/uart_t.v
 R6

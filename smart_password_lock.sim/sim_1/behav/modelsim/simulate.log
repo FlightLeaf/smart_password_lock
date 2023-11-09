@@ -12,17 +12,25 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# do {testbench_simulate.do}
-# vsim -do "do {testbench_simulate.do}" -l simulate.log 
-# Start time: 19:16:51 on Oct 24,2023
+# do {password_in_tb_simulate.do}
+# vsim -do "do {password_in_tb_simulate.do}" -l simulate.log 
+# Start time: 08:32:04 on Nov 09,2023
 # ** Note: (vsim-3812) Design is being optimized...
 # 
-# ** Error: ../../../../smart_password_lock.srcs/sim_1/new/fre_tb.v(62): (vopt-2912) Port 'sys_clk' not found in module 'bluetooth' (1st connection).
-# 
-# Optimization failed
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./testbench_simulate.do PAUSED at line 9
-# End time: 19:17:17 on Oct 24,2023, Elapsed time: 0:00:26
-# Errors: 1, Warnings: 0
+# Loading work.password_in_tb(fast)
+# Loading work.password_in(fast)
+# Loading work.bluetooth(fast)
+# Loading work.frequency_1_2(fast)
+# Loading work.uart_r(fast)
+# Loading work.uart_t(fast)
+# Loading work.bcd_view_out(fast)
+# Loading work.display_decode(fast)
+# Loading work.glbl(fast)
+# 1
+# 1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# Causality operation skipped due to absence of debug database file
+# End time: 08:38:31 on Nov 09,2023, Elapsed time: 0:06:27
+# Errors: 0, Warnings: 1

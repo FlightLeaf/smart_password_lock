@@ -21,11 +21,12 @@
 
 
 module bluetooth(
-    input clk,  //（50MHz）
-    input rx,   //rx对应蓝牙模块的tx
-    output tx,  //tx对应蓝牙模块的rx
-    output [7:0] message    //message为读入的数据
-);  
+    clk,rx,tx,message
+);
+    input clk;  //（50MHz）
+    input rx;   //rx对应蓝牙模块的tx
+    output tx;  //tx对应蓝牙模块的rx
+    output [7:0] message;    //message为读入的数据
 
     wire sig;  //sig是读入的完成信号，下降沿表示读入完成，同时作为输出的开始信号
     wire sys_clk;

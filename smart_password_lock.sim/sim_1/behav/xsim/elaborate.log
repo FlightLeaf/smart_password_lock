@@ -5,16 +5,4 @@ Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.frequency_1_2
-Compiling module xil_defaultlib.uart_r
-Compiling module xil_defaultlib.uart_t
-Compiling module xil_defaultlib.bluetooth
-Compiling module xil_defaultlib.bcd_view_out
-Compiling module xil_defaultlib.display_decode
-Compiling module xil_defaultlib.password_in
-Compiling module xil_defaultlib.password_in_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot password_in_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
