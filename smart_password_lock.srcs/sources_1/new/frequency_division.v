@@ -46,7 +46,7 @@ module frequency_division(
     end
 
     reg [31:0] count2 = 0;
-    parameter COUNT2 = 32'd49999_999;     //49
+    parameter COUNT2 = 32'd24999_999;     //49
     always @(posedge clk or posedge reset) begin
         if(reset) begin
             count2 <= 0;

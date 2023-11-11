@@ -94,8 +94,8 @@ module display_output(
                 end
                 //修改成功
                 5'b11101:begin
-                    RGB1 <= 3'b100;
-                    RGB2 <= 3'b100;
+                    RGB1 <= 3'b001;
+                    RGB2 <= 3'b001;
                 end
                 default: begin
                     RGB1 <= 3'b000;

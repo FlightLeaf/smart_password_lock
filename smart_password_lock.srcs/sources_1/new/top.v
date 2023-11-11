@@ -21,7 +21,7 @@
 
 module top(
     clk,rst,ok,change_password,rx,display,
-    led_switch,led_change,led_ok,led_no,tx,sel,dout,beep
+    tx,sel,dout,RGB1,RGB2,led
     );
 
     //输入变量
@@ -33,19 +33,26 @@ module top(
     input change_password;
 
     //输出变量
-    output led_switch;          //门开关状态
-    output led_change;          //是否处于修改密码状态
-    output led_ok;              //成功
-    output led_no;              //失败
+    
     output tx;                  //蓝牙输出
     output [7:0] sel;           //数码管位选
     output [6:0] dout;          //数据输出
-    output beep;
+    output [2:0] RGB1;
+    output [2:0] RGB2;
+    output [15:0] led;
 
     wire clk1k;                 //状态机时钟 10MHz 4
     wire clk2k;                 //消抖时钟 1Mhz 49
     wire clk3k;                 //数码管扫描时钟 1khz 49999
     wire clk4k;                 //矩阵键盘扫描时钟 50kHz 999
+    
+    wire led_switch;          //门开关状态
+    wire led_change;          //是否处于修改密码状态
+    wire led_ok;              //成功
+    wire led_no;              //失败
+    wire beep;
+
+    wire [3:0] state_led;
 
     wire [7:0] state;           //当前状态
     wire reset;                 //状态机复位信号
@@ -78,6 +85,11 @@ module top(
 
     //DEBUG探针
     //ila_0 ila_0(clk,state,ok,change_password);
+
+    //流水显示
+    display_output display_output(clk1k,reset,led_switch,led_change,led_ok,led_no,beep,RGB1,RGB2,state_led);
+
+    flowing_water_lamp flowing_water_lamp(clk2k,reset,state_led,led);
 
     
 endmodule

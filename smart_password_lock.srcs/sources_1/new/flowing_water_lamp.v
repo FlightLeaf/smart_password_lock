@@ -28,19 +28,30 @@ module flowing_water_lamp(
     input [3:0] state;
     output reg [15:0] led;
 
+    reg set = 0;
+    reg count = 0;
+
     always @(posedge clk2k or posedge reset) begin
         if(reset) begin
             led <= 16'h0000;
         end else begin
             case (state)
                 4'b0001:begin
-                    led <= {led,4'b010};
+                    if(led == 16'hFFFF) begin
+                        led <= 16'h0000;
+                    end else begin
+                        led <= {led,1'b1};
+                    end 
                 end
                 4'b0010:begin
-                    led <= {led,4'b101};
+                    if(led == 16'h0000) begin
+                        led <= 16'hffff;
+                    end else begin
+                        led <= {led,1'b0};
+                    end 
                 end
                 4'b0100:begin
-                    led <= {led,16'h0000};
+                    led <= ~led;
                 end
                 4'b1000:begin
                     led <= 16'hFFFF;

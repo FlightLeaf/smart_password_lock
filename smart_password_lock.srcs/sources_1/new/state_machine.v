@@ -93,9 +93,13 @@ module state_machine(
                     end
                 end 
                 change_password_state_one: begin
-                    password_main <= password_reg;
-                    state <= change_success_state;
-                    clear <= 1; 
+                    if(password_reg != 24'hffffff) begin
+                        password_main <= password_reg;
+                        state <= change_success_state;
+                        clear <= 1;
+                    end else begin
+                        state <= change_mistake_state;
+                    end
                 end 
                 default: begin
                     display_max <= 0;
