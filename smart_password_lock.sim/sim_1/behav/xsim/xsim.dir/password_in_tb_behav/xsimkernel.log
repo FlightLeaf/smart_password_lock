@@ -2,3 +2,6 @@ Running: xsim.dir/password_in_tb_behav/xsimk.exe -simmode gui -wdb password_in_t
 Design successfully loaded
 Design Loading Memory Usage: 8400 KB (Peak: 8400 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 17104 KB (Peak: 17104 KB)
+Simulation CPU Usage: 561 ms

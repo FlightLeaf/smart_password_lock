@@ -28,7 +28,7 @@ module frequency_division(
     output reg clk1k = 0;       //状态转换时钟 10MHz 4
     output reg clk2k = 0;       //消抖时钟 1Mhz 49
     output reg clk3k = 0;       //数码扫描时钟 1khz 49999
-    output reg clk4k = 0;       //
+    output reg clk4k = 0;       
 
 
     reg [15:0] count1 = 0;
@@ -45,8 +45,8 @@ module frequency_division(
         end
     end
 
-    reg [15:0] count2 = 0;
-    parameter COUNT2 = 16'd49;     //49
+    reg [31:0] count2 = 0;
+    parameter COUNT2 = 32'd49999_999;     //49
     always @(posedge clk or posedge reset) begin
         if(reset) begin
             count2 <= 0;
