@@ -21,7 +21,7 @@
 
 module top(
     clk,rst,ok,change_password,rx,display,
-    tx,sel,dout,RGB1,RGB2,led
+    tx,sel,dout,RGB1,RGB2,led,beep
     );
 
     //输入变量
@@ -40,6 +40,7 @@ module top(
     output [2:0] RGB1;
     output [2:0] RGB2;
     output [15:0] led;
+    output beep;
 
     wire clk1k;                 //状态机时钟 10MHz 4
     wire clk2k;                 //消抖时钟 1Mhz 49
@@ -50,7 +51,6 @@ module top(
     wire led_change;          //是否处于修改密码状态
     wire led_ok;              //成功
     wire led_no;              //失败
-    wire beep;
 
     wire [3:0] state_led;
 
@@ -83,12 +83,10 @@ module top(
     //特殊状态延时模块
     state_delay state_delay(clk1k,state,rst,reset,led_switch,led_change,led_ok,led_no,beep);
 
-    //DEBUG探针
-    //ila_0 ila_0(clk,state,ok,change_password);
-
-    //流水显示
+    //RGB显示
     display_output display_output(clk1k,reset,led_switch,led_change,led_ok,led_no,beep,RGB1,RGB2,state_led);
 
+    //流水显示
     flowing_water_lamp flowing_water_lamp(clk2k,reset,state_led,led);
 
     

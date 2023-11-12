@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date                      : Sun Nov 12 13:12:29 2023
+| Date                      : Sun Nov 12 23:53:11 2023
 | Host                      : xiaoxin running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_io_placed.rpt
 | Design                    : top
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            44 |
+|            45 |
 +---------------+
 
 
@@ -174,7 +174,7 @@ Table of Contents
 | H11        |                 |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | H12        |                 |            | VCCAUX                       | VCCAUX      |             |         |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |
 | H13        |                 |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| H14        |                 | High Range | IO_L15P_T2_DQS_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| H14        | beep            | High Range | IO_L15P_T2_DQS_15            | OUTPUT      | LVCMOS33    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | H15        |                 | High Range | IO_L19N_T3_A21_VREF_15       | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | H16        |                 | High Range | IO_L13P_T2_MRCC_15           | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | H17        | led[0]          | High Range | IO_L18P_T2_A24_15            | OUTPUT      | LVCMOS33    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
