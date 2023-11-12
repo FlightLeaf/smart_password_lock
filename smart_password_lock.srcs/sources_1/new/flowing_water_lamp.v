@@ -37,21 +37,25 @@ module flowing_water_lamp(
         end else begin
             case (state)
                 4'b0001:begin
+                    if(led != 16'hAAAA) begin
+                        led <= 16'hAAAA;
+                    end else begin
+                        led <= 16'h5555;
+                    end 
+                end
+                4'b0010:begin
                     if(led == 16'hFFFF) begin
                         led <= 16'h0000;
                     end else begin
                         led <= {led,1'b1};
                     end 
                 end
-                4'b0010:begin
-                    if(led == 16'h0000) begin
-                        led <= 16'hffff;
-                    end else begin
-                        led <= {led,1'b0};
-                    end 
-                end
                 4'b0100:begin
-                    led <= ~led;
+                    if(led != 16'hFFFF)begin
+                        led <= 16'hFFFF;
+                    end else begin
+                        led <= 16'h0000;
+                    end
                 end
                 4'b1000:begin
                     led <= 16'hFFFF;

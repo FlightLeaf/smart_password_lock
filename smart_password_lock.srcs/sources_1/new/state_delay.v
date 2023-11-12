@@ -50,7 +50,11 @@ module state_delay(
 
     always @(posedge clk1k or posedge rst) begin
         if(rst) begin
-            reset <= 1;
+            if(state_now == warning_state) begin
+                reset <= 0;
+            end else begin
+                reset <= 1;
+            end
         end else begin
             case (state_now)
                 in_password_state: begin

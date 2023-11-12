@@ -93,12 +93,13 @@ module state_machine(
                     end
                 end 
                 change_password_state_one: begin
-                    if(password_reg != 24'hffffff) begin
+                    if(password_reg != 24'hffffff & password_reg[23:20] != 4'hF) begin
                         password_main <= password_reg;
                         state <= change_success_state;
                         clear <= 1;
                     end else begin
                         state <= change_mistake_state;
+                        clear <= 1;
                     end
                 end 
                 default: begin

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Sat Nov 11 23:16:50 2023
+| Date         : Sun Nov 12 13:13:22 2023
 | Host         : xiaoxin running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 371
+             Violations found: 376
 +-----------+------------------+------------------------------+------------+
 | Rule      | Severity         | Description                  | Violations |
 +-----------+------------------+------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 317        |
-| LUTAR-1   | Warning          | LUT drives async reset alert | 30         |
-| TIMING-20 | Warning          | Non-clocked latch            | 24         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 318        |
+| LUTAR-1   | Warning          | LUT drives async reset alert | 33         |
+| TIMING-20 | Warning          | Non-clocked latch            | 25         |
 +-----------+------------------+------------------------------+------------+
 
 2. REPORT DETAILS
@@ -1166,455 +1166,460 @@ Related violations: <none>
 
 TIMING-17#227 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/reset_reg/C is not reached by a timing clock
+The clock pin state_delay/reset_reg_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#228 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[0]/C is not reached by a timing clock
+The clock pin state_delay/reset_reg_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#229 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[10]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#230 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[11]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#231 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[12]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#232 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[13]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#233 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[14]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#234 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[15]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#235 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[16]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#236 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[17]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#237 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[18]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#238 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[19]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#239 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[1]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#240 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[20]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#241 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[21]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#242 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[22]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#243 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[23]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#244 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[24]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#245 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[25]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#246 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[26]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#247 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[27]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#248 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[28]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#249 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[29]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#250 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[2]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#251 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[3]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#252 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[4]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#253 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[5]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#254 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[6]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#255 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[7]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#256 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[8]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#257 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_delay/state_count_reg[9]/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#258 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/clear_reg/C is not reached by a timing clock
+The clock pin state_delay/state_count_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#259 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/display_max_reg/C is not reached by a timing clock
+The clock pin state_machine/clear_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#260 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[0]/C is not reached by a timing clock
+The clock pin state_machine/display_max_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#261 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[10]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#262 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[11]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#263 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[12]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#264 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[13]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#265 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[14]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#266 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[15]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#267 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[16]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#268 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[17]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#269 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[18]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#270 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[19]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#271 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[1]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#272 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[20]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#273 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[21]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#274 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[22]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#275 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[23]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#276 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[2]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#277 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[3]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#278 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[4]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#279 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[5]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#280 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[6]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#281 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[7]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#282 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[8]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#283 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_main_reg[9]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#284 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[0]/C is not reached by a timing clock
+The clock pin state_machine/password_main_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#285 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[10]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#286 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[11]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#287 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[12]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#288 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[13]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#289 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[14]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#290 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[15]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#291 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[16]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#292 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[17]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#293 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[18]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#294 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[19]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#295 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[1]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#296 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[20]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#297 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[21]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#298 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[22]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#299 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[23]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#300 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[2]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#301 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[3]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#302 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[4]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#303 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[5]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#304 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[6]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#305 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[7]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#306 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[8]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#307 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_reg_reg[9]/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#308 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/password_result_reg/C is not reached by a timing clock
+The clock pin state_machine/password_reg_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#309 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/state_reg[0]/C is not reached by a timing clock
+The clock pin state_machine/password_result_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#310 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/state_reg[1]/C is not reached by a timing clock
+The clock pin state_machine/state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#311 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/state_reg[3]/C is not reached by a timing clock
+The clock pin state_machine/state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#312 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/state_reg[4]/C is not reached by a timing clock
+The clock pin state_machine/state_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#313 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/state_reg[5]/C is not reached by a timing clock
+The clock pin state_machine/state_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#314 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/state_reg[6]/C is not reached by a timing clock
+The clock pin state_machine/state_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#315 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/state_reg[7]/C is not reached by a timing clock
+The clock pin state_machine/state_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#316 Critical Warning
 Non-clocked sequential cell  
-The clock pin state_machine/warning_num_reg[0]/C is not reached by a timing clock
+The clock pin state_machine/state_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#317 Critical Warning
+Non-clocked sequential cell  
+The clock pin state_machine/warning_num_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#318 Critical Warning
 Non-clocked sequential cell  
 The clock pin state_machine/warning_num_reg[1]/C is not reached by a timing clock
 Related violations: <none>
@@ -1651,122 +1656,145 @@ Related violations: <none>
 
 LUTAR-1#7 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[0]_C/CLR, password_in/data_bcd_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_delay/state[7]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) display_output/RGB1_reg[0]/CLR, display_output/RGB1_reg[1]/CLR,
+display_output/RGB1_reg[1]_lopt_replica/CLR,
+display_output/RGB1_reg[2]/CLR, display_output/RGB2_reg[0]/CLR,
+display_output/RGB2_reg[2]/CLR, display_output/state_reg[0]/CLR,
+display_output/state_reg[1]/CLR, display_output/state_reg[2]/CLR,
+display_output/state_reg[3]/PRE, flowing_water_lamp/led_reg[0]/CLR,
+flowing_water_lamp/led_reg[10]/CLR, flowing_water_lamp/led_reg[11]/CLR,
+flowing_water_lamp/led_reg[12]/CLR, flowing_water_lamp/led_reg[13]/CLR
+ (the first 15 of 35 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#8 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[10]_C/CLR, password_in/data_bcd_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[0]_C/CLR, password_in/data_bcd_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#9 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[11]_C/CLR, password_in/data_bcd_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[10]_C/CLR, password_in/data_bcd_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#10 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[12]_C/CLR, password_in/data_bcd_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[11]_C/CLR, password_in/data_bcd_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#11 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[13]_C/CLR, password_in/data_bcd_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[12]_C/CLR, password_in/data_bcd_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#12 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[14]_C/CLR, password_in/data_bcd_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[13]_C/CLR, password_in/data_bcd_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#13 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[15]_C/CLR, password_in/data_bcd_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[14]_C/CLR, password_in/data_bcd_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#14 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[16]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[16]_C/CLR, password_in/data_bcd_reg[16]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[15]_C/CLR, password_in/data_bcd_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#15 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[17]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[17]_C/CLR, password_in/data_bcd_reg[17]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[16]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[16]_C/CLR, password_in/data_bcd_reg[16]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#16 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[18]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[18]_C/CLR, password_in/data_bcd_reg[18]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[17]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[17]_C/CLR, password_in/data_bcd_reg[17]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#17 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[19]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[19]_C/CLR, password_in/data_bcd_reg[19]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[18]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[18]_C/CLR, password_in/data_bcd_reg[18]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#18 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[1]_C/CLR, password_in/data_bcd_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[19]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[19]_C/CLR, password_in/data_bcd_reg[19]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#19 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[20]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[20]_C/CLR, password_in/data_bcd_reg[20]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[1]_C/CLR, password_in/data_bcd_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#20 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[21]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[21]_C/CLR, password_in/data_bcd_reg[21]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[20]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[20]_C/CLR, password_in/data_bcd_reg[20]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#21 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[22]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[22]_C/CLR, password_in/data_bcd_reg[22]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[21]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[21]_C/CLR, password_in/data_bcd_reg[21]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#22 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[23]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[23]_C/CLR, password_in/data_bcd_reg[23]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[22]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[22]_C/CLR, password_in/data_bcd_reg[22]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#23 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[2]_C/CLR, password_in/data_bcd_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[23]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[23]_C/CLR, password_in/data_bcd_reg[23]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#24 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[3]_C/CLR, password_in/data_bcd_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[2]_C/CLR, password_in/data_bcd_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#25 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[4]_C/CLR, password_in/data_bcd_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[3]_C/CLR, password_in/data_bcd_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#26 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[5]_C/CLR, password_in/data_bcd_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[4]_C/CLR, password_in/data_bcd_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#27 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[6]_C/CLR, password_in/data_bcd_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[5]_C/CLR, password_in/data_bcd_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#28 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[7]_C/CLR, password_in/data_bcd_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[6]_C/CLR, password_in/data_bcd_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#29 Warning
 LUT drives async reset alert  
-LUT cell state_machine/data_bcd_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[8]_C/CLR, password_in/data_bcd_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_bcd_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[7]_C/CLR, password_in/data_bcd_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#30 Warning
 LUT drives async reset alert  
+LUT cell state_machine/data_bcd_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[8]_C/CLR, password_in/data_bcd_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#31 Warning
+LUT drives async reset alert  
 LUT cell state_machine/data_bcd_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) password_in/data_bcd_reg[9]_C/CLR, password_in/data_bcd_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#32 Warning
+LUT drives async reset alert  
+LUT cell state_machine/reset_reg_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) state_delay/reset_reg_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#33 Warning
+LUT drives async reset alert  
+LUT cell state_machine/reset_reg_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) state_delay/reset_reg_C/CLR, state_delay/reset_reg_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-20#1 Warning
@@ -1887,6 +1915,11 @@ Related violations: <none>
 TIMING-20#24 Warning
 Non-clocked latch  
 The latch password_in/data_bcd_reg[9]_LDC cannot be properly analyzed as its control pin password_in/data_bcd_reg[9]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch state_delay/reset_reg_LDC cannot be properly analyzed as its control pin state_delay/reset_reg_LDC/G is not reached by a timing clock
 Related violations: <none>
 
 
