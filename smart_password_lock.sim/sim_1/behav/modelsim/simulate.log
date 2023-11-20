@@ -12,25 +12,18 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# do {password_in_tb_simulate.do}
-# vsim -do "do {password_in_tb_simulate.do}" -l simulate.log 
-# Start time: 08:32:04 on Nov 09,2023
+# do {Hz_tb_simulate.do}
+# vsim -do "do {Hz_tb_simulate.do}" -l simulate.log 
+# Start time: 08:22:22 on Nov 14,2023
 # ** Note: (vsim-3812) Design is being optimized...
 # 
-# Loading work.password_in_tb(fast)
-# Loading work.password_in(fast)
-# Loading work.bluetooth(fast)
-# Loading work.frequency_1_2(fast)
-# Loading work.uart_r(fast)
-# Loading work.uart_t(fast)
-# Loading work.bcd_view_out(fast)
-# Loading work.display_decode(fast)
+# Loading work.Hz_tb(fast)
+# Loading work.frequency_division(fast)
 # Loading work.glbl(fast)
 # 1
 # 1
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# Causality operation skipped due to absence of debug database file
-# End time: 08:38:31 on Nov 09,2023, Elapsed time: 0:06:27
-# Errors: 0, Warnings: 1
+# End time: 08:24:13 on Nov 14,2023, Elapsed time: 0:01:51
+# Errors: 0, Warnings: 0

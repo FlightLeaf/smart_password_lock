@@ -2,11 +2,11 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sun Nov 12 23:50:59 2023
-# Process ID: 5240
+# Start of session at: Sun Nov 19 17:49:38 2023
+# Process ID: 13068
 # Current directory: D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1
-# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/top.vds
+# Command line: vivado.exe -log top_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
+# Log file: D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1/top_module.vds
 # Journal file: D:/Desktop/smart_password_lock/smart_password_lock.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source top.tcl -notrace
+source top_module.tcl -notrace

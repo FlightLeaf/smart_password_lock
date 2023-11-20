@@ -36,8 +36,7 @@ module password_in_tb(
     wire [6:0] dout;
     wire [23:0] password_bcd;
 
-    password_in password_in(clk,clk3k,reset,clear,rx,display,display_max,tx,sel,dout,password_bcd);//clk,clk3k,reset,clear,rx,display,display_max,tx,sel,dout,password_bcd
-
+    password_in password_in(clk,clk3k,reset,clear,rx,display,display_max,tx,sel,dout,password_bcd);
     initial begin
         clk = 1;
         clk3k = 1;

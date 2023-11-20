@@ -96,3 +96,4 @@ set_property PACKAGE_PIN R12 [get_ports {RGB2[0]}]
 
 set_property PACKAGE_PIN H14 [get_ports beep]
 set_property IOSTANDARD LVCMOS33 [get_ports beep]
+

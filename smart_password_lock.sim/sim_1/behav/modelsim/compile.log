@@ -1,4 +1,4 @@
-# do {password_in_tb_compile.do}
+# do {Hz_tb_compile.do}
 # ** Warning: (vlib-34) Library already exists at "modelsim_lib/work".
 # 
 # ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim".
@@ -9,27 +9,21 @@
 # vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 08:31:56 on Nov 09,2023
-# vlog -incr -mfcu -work xil_defaultlib ../../../../smart_password_lock.srcs/sources_1/new/bcd_view_out.v ../../../../smart_password_lock.srcs/sources_1/new/bluetooth.v ../../../../smart_password_lock.srcs/sources_1/new/display_decode.v ../../../../smart_password_lock.srcs/sources_1/new/frequency_1_2.v ../../../../smart_password_lock.srcs/sources_1/new/password_in.v ../../../../smart_password_lock.srcs/sources_1/new/uart_r.v ../../../../smart_password_lock.srcs/sources_1/new/uart_t.v ../../../../smart_password_lock.srcs/sim_1/new/password_in_tb.v 
-# -- Compiling module bcd_view_out
-# -- Compiling module bluetooth
-# -- Compiling module display_decode
-# -- Skipping module frequency_1_2
-# -- Compiling module password_in
-# -- Compiling module uart_r
-# -- Skipping module uart_t
-# -- Compiling module password_in_tb
+# Start time: 08:22:12 on Nov 14,2023
+# vlog -incr -mfcu -work xil_defaultlib ../../../../smart_password_lock.srcs/sources_1/new/frequency_division.v ../../../../smart_password_lock.srcs/sim_1/new/Hz_tb.v 
+# -- Compiling module frequency_division
+# -- Compiling module Hz_tb
 # 
 # Top level modules:
-# 	password_in_tb
-# End time: 08:31:56 on Nov 09,2023, Elapsed time: 0:00:00
+# 	Hz_tb
+# End time: 08:22:13 on Nov 14,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 08:31:56 on Nov 09,2023
+# Start time: 08:22:13 on Nov 14,2023
 # vlog -work xil_defaultlib glbl.v 
 # -- Compiling module glbl
 # 
 # Top level modules:
 # 	glbl
-# End time: 08:31:57 on Nov 09,2023, Elapsed time: 0:00:01
+# End time: 08:22:13 on Nov 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

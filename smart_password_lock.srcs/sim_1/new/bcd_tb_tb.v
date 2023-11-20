@@ -20,17 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module bcd_tb_tb(
-
-    );
-    reg clk;
-    wire [7:0] sel;
+module bcd_tb_tb();
+    reg [3:0] din;
     wire [6:0] dout;
-    bcd bcd(clk,sel,dout);
+
+    display_decode display_decode(
+        din,dout
+    );
+    
     initial begin
-        clk = 0;
-    end
-    always begin
-        #1;clk = ~clk;
+        din = 4'b0011;
     end
 endmodule
