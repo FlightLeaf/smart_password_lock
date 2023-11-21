@@ -1,25 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2023/10/15 17:04:35
-// Design Name: 
-// Module Name: state_delay
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
+//延时状态机
 module state_delay(
     clk1k,state_now,rst,reset,led_switch,led_change,led_ok,led_no,beep
     );

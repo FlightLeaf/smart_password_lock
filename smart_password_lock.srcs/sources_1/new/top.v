@@ -1,24 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2023/10/13 08:20:26
-// Design Name: 
-// Module Name: top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
+//顶层
 module top(
     clk,rst,ok,change_password,rx,display,
     tx,sel,dout,RGB1,RGB2,led,beep,

@@ -1,9 +1,12 @@
+#时钟
 set_property PACKAGE_PIN E3 [get_ports clk]
 set_property IOSTANDARD LVCMOS33 [get_ports clk]
 
 create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets pclk_IBUF]
 
+
+#OV7670摄像头
 set_property PACKAGE_PIN G1 [get_ports href]
 set_property IOSTANDARD LVCMOS33 [get_ports href]
 set_property PACKAGE_PIN H2 [get_ports ov7670_pwdn]
@@ -26,6 +29,10 @@ set_property PACKAGE_PIN K1 [get_ports {D_data[7]}]
 set_property PACKAGE_PIN H4 [get_ports {D_data[6]}]
 set_property PACKAGE_PIN E6 [get_ports {D_data[5]}]
 set_property PACKAGE_PIN F3 [get_ports {D_data[4]}]
+set_property PACKAGE_PIN J4 [get_ports {D_data[3]}]
+set_property PACKAGE_PIN G2 [get_ports {D_data[2]}]
+set_property PACKAGE_PIN J3 [get_ports {D_data[1]}]
+set_property PACKAGE_PIN G4 [get_ports {D_data[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {D_data[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {D_data[6]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {D_data[5]}]
@@ -34,6 +41,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports {D_data[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {D_data[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {D_data[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {D_data[0]}]
+
+
+#VGA
 set_property PACKAGE_PIN A4 [get_ports {vga_blue[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue[2]}]
@@ -57,11 +67,6 @@ set_property PACKAGE_PIN B12 [get_ports vga_vsync]
 set_property IOSTANDARD LVCMOS33 [get_ports vga_vsync]
 set_property PACKAGE_PIN L16 [get_ports testmode]
 set_property IOSTANDARD LVCMOS33 [get_ports testmode]
-
-set_property PACKAGE_PIN J4 [get_ports {D_data[3]}]
-set_property PACKAGE_PIN G2 [get_ports {D_data[2]}]
-set_property PACKAGE_PIN J3 [get_ports {D_data[1]}]
-set_property PACKAGE_PIN G4 [get_ports {D_data[0]}]
 set_property PACKAGE_PIN C5 [get_ports {vga_blue[2]}]
 set_property PACKAGE_PIN B4 [get_ports {vga_blue[1]}]
 set_property PACKAGE_PIN A3 [get_ports {vga_blue[0]}]
@@ -70,11 +75,13 @@ set_property PACKAGE_PIN C6 [get_ports {vga_green[0]}]
 set_property PACKAGE_PIN C7 [get_ports {vga_red[1]}]
 set_property PACKAGE_PIN B7 [get_ports {vga_red[0]}]
 
+#蓝牙
 set_property PACKAGE_PIN G17 [get_ports rx]
 set_property PACKAGE_PIN E18 [get_ports tx]
 set_property IOSTANDARD LVCMOS33 [get_ports tx]
 set_property IOSTANDARD LVCMOS33 [get_ports rx]
 
+#数码管
 set_property IOSTANDARD LVCMOS33 [get_ports {dout[6]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {dout[5]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {dout[4]}]
@@ -106,18 +113,21 @@ set_property PACKAGE_PIN T9 [get_ports {sel[2]}]
 set_property PACKAGE_PIN J18 [get_ports {sel[1]}]
 set_property PACKAGE_PIN J17 [get_ports {sel[0]}]
 
+#显示按钮
 set_property IOSTANDARD LVCMOS33 [get_ports display]
 set_property PACKAGE_PIN P18 [get_ports display]
 
+#复位按钮
 set_property IOSTANDARD LVCMOS33 [get_ports rst]
 set_property PACKAGE_PIN M17 [get_ports rst]
 
+#修改密码&确认键
 set_property IOSTANDARD LVCMOS33 [get_ports change_password]
 set_property IOSTANDARD LVCMOS33 [get_ports ok]
 set_property PACKAGE_PIN P17 [get_ports change_password]
 set_property PACKAGE_PIN M18 [get_ports ok]
 
-
+#流水灯
 set_property PACKAGE_PIN V11 [get_ports {led[15]}]
 set_property PACKAGE_PIN V12 [get_ports {led[14]}]
 set_property PACKAGE_PIN V14 [get_ports {led[13]}]
@@ -163,5 +173,6 @@ set_property PACKAGE_PIN N15 [get_ports {RGB2[2]}]
 set_property PACKAGE_PIN M16 [get_ports {RGB2[1]}]
 set_property PACKAGE_PIN R12 [get_ports {RGB2[0]}]
 
+#蜂鸣器
 set_property PACKAGE_PIN H14 [get_ports beep]
 set_property IOSTANDARD LVCMOS33 [get_ports beep]

@@ -1,25 +1,6 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2023/11/11 21:16:44
-// Design Name: 
-// Module Name: display_output
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
+//RGB输出控制
 module display_output(
     clk1k,reset,led_switch,led_change,led_ok,led_no,beep,RGB1,RGB2,state
     );

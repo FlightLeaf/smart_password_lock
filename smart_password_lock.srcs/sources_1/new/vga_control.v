@@ -55,7 +55,7 @@ always @(posedge clk25 or negedge reset) begin
         
         vsync_reg <= #1 (vcount == 494) ? 0 : 1;
 
-        // Define vidoe display 320x240 region        
+        // 定义视频显示器320x240区域     
         if (hcount < 320 && vcount < 240) begin
             if (testmode) begin
                 vga_red_reg <= #1 4'b0111;
@@ -66,9 +66,7 @@ always @(posedge clk25 or negedge reset) begin
                 vga_red_reg[3:0] <= #1 ram_output_data[11:8];
                 vga_green_reg[3:0] <= #1 ram_output_data[7:4];
                 vga_blue_reg[3:0] <= #1 ram_output_data[3:0];
-            // end
-            
-            read_RAM_address_reg <= #1 hcount + 320*vcount + 1;
+                read_RAM_address_reg <= #1 hcount + 320*vcount + 1;
             end
         end
         else begin
@@ -82,20 +80,6 @@ always @(posedge clk25 or negedge reset) begin
         
         if (vcount >= 240) 
             read_RAM_address_reg <= #1 0;
-        
-        // next read address
-//        if (hcount < 319 && vcount < 240)
-//            read_RAM_address_reg <= #1 hcount + 320*vcount + 1;
-//        else if (vcount >= 240) 
-//            read_RAM_address_reg <= #1 0;
     end    
 end
-
-//always @(posedge sys_clk) begin
-//    if (hcount < 320 && vcount < 240)
-//        read_RAM_address_reg <= #1 hcount + 320*vcount;
-//    else if (vcount >= 240) 
-//        read_RAM_address_reg <= #1 0;
-//end
-
 endmodule
