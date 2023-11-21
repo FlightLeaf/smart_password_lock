@@ -21,7 +21,11 @@
 
 module top(
     clk,rst,ok,change_password,rx,display,
-    tx,sel,dout,RGB1,RGB2,led,beep
+    tx,sel,dout,RGB1,RGB2,led,beep,
+
+    resetc,pclk,vsync,href,D_data,testmode,vga_red,
+    vga_green,vga_blue,vga_hsync,vga_vsync,sioc_to_ov7670,
+    siod_to_ov7670,ov7670_xclk,ov7670_pwdn,ov7670_reset
     );
 
     //输入变量
@@ -41,6 +45,26 @@ module top(
     output [2:0] RGB2;
     output [15:0] led;
     output beep;
+
+    input wire resetc; // System Reset 
+    // input from OV7670
+    input wire pclk;  // camera pixel clock
+    input wire vsync;  // camera frame signal
+    input wire href; // camera pixel valid 
+    input wire [7:0] D_data; // camera D data input
+    input wire testmode; // skip ov7670 setup
+    // output to VGA
+    output wire [3:0] vga_red;
+    output wire [3:0] vga_green;
+    output wire [3:0] vga_blue;
+    output wire vga_hsync;
+    output wire vga_vsync;
+    // output to OV7670 camera
+    output wire sioc_to_ov7670; // SCL
+    output wire siod_to_ov7670; // SDA
+    output wire ov7670_xclk; // to ov7670 input clk
+    output wire ov7670_pwdn; // To ov7670 power down
+    output wire ov7670_reset;  // to ov7670 reset signal
 
     wire clk1k;                 //状态机时钟 10MHz 4
     wire clk2k;                 //消抖时钟 1Mhz 49
@@ -88,6 +112,8 @@ module top(
 
     //流水显示
     flowing_water_lamp flowing_water_lamp(clk2k,reset,state_led,led);
+
+    camera_vga_display_top camera_vga_display_top(clk,resetc,pclk,vsync,href,D_data,testmode,vga_red,vga_green,vga_blue,vga_hsync,vga_vsync,sioc_to_ov7670,siod_to_ov7670,ov7670_xclk,ov7670_pwdn,ov7670_reset);
 
     
 endmodule

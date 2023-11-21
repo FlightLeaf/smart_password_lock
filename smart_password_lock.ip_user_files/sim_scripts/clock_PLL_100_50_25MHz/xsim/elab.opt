@@ -1,0 +1,1 @@
+--incr --debug typical --relax --mt auto -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot clock_PLL_100_50_25MHz xil_defaultlib.clock_PLL_100_50_25MHz xil_defaultlib.glbl -log elaborate.log
