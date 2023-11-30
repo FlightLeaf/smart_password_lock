@@ -1,45 +1,37 @@
 `timescale 1ns/1ns
-// Create Date: 2023/8
-// Engineer: Don CT Chen
-// Target: transfer setting data to OV7670 via SCCB interface
-// Module Name: sccb_communication
-// 
-// Revision:
-//
-
 module sccb_communication 
 #(
-    // Outside setting parameter
+    // 常量
     parameter INPUT_CLK_FREQ = 25000000,  // 25MHz
     parameter SCCB_FREQ = 100000  // 100kHz, constant
 )
 (
-    input wire clk,  // system operation clock
+    input wire clk,  // 系统时钟
     input wire reset,
     input wire start,
-    input wire [7:0] sub_address, // OV7670 Function setting address (for phase 2 txm)
-    input wire [7:0] set_data,  // for phase 3 txm
+    input wire [7:0] sub_address, // OV7670功能设置地址（用于第2阶段txm）
+    input wire [7:0] set_data,  // 对于第3阶段txm
     output wire ready,
-    output wire SIOC,  // to SCCB setting clock
-    inout wire SIOD    // SCCB Data, based on SCCB Spec doc
+    output wire SIOC,  // SCCB设置时钟
+    inout wire SIOD    // SCCB数据，基于SCCB规范文档
 );
 
 reg ready_reg = 1'b1;
 reg SIOC_reg = 1'b1;
 reg SIOD_reg = 1'b1;
-// to ouside of module
+//至模块外侧
 assign ready = ready_reg;
 assign SIOC = SIOC_reg;
 assign SIOD = SIOD_reg;
 
-// OV7670 HW Address
+//OV7670硬件地址
 localparam CAMERA_ADDRESS = 8'h42; // for phase 1 txm
 
-// Define FSM State
-// To generate SIO_C, SIO_D data waveform
-// To fit SCCB timing specification
-// Use 4 transmit steps
-// 4 ending process steps to produce stop signal
+//定义FSM状态
+//生成SIO_C、SIO_D数据波形
+//符合SCCB定时规范
+//使用4个传输步骤
+//产生停止信号的4个结束过程步骤
 localparam FSM_IDLE = 4'd0,
            FSM_START = 4'd1,
            FSM_LOAD = 4'd2,
@@ -54,15 +46,15 @@ localparam FSM_IDLE = 4'd0,
            FSM_DONE = 4'd11,
            FSM_TIMER = 4'd12;
 
-// Define FSM using variables
+//使用变量定义FSM
 reg [3:0] SCCB_FSM_state = 0;
 reg [3:0] FSM_return_state = 0;
-reg [31:0] timer = 0;  // set delay time
-reg [7:0] sub_address_reg; // function setting address
-reg [7:0] set_data_reg;    // function setting values
-reg [1:0] byte_counter = 0;  // descide transfer sequence(Address, sub_address, data)
+reg [31:0] timer = 0;  //设置延迟时间
+reg [7:0] sub_address_reg; //功能设置地址
+reg [7:0] set_data_reg;    //功能设定值
+reg [1:0] byte_counter = 0;  //descide传输序列（地址、子地址、数据）
 reg [3:0] bit_index = 0;
-reg [7:0] load_txm_byte = 0;  // 8 bits address or data, wait to trasnfer
+reg [7:0] load_txm_byte = 0;  //8位地址或数据，等待传输
 
 //FSM
 always @(posedge clk or negedge reset) begin
@@ -73,48 +65,48 @@ always @(posedge clk or negedge reset) begin
         case (SCCB_FSM_state)
 
             FSM_IDLE: begin
-                // initial clean
+                // 初始化
                 bit_index <= #1 4'b0000;
                 byte_counter <= #1 2'b00;
-                // if receive Start singal, start txm process
+                //如果接收到启动信号，则启动txm进程
                 if (start) begin
-                    // Start the SCCB transmit process
+                    // 启动SCCB传输过程
                     SCCB_FSM_state <= #1 FSM_START;
-                    // latch setting address and data for txm
+                    // txm的锁存器设置地址和数据
                     sub_address_reg <= #1 sub_address;
                     set_data_reg <= #1 set_data;
-                    // change to module busy singal
+                    // 更改为模块忙信号
                     ready_reg <= #1 1'b0;
                 end
                 else begin
-                    // if not receive Start singal
-                    // wait for input start signal
-                    // txm process is ready for input new data                
+                    //如果未接收到启动信号
+                    //等待输入启动信号
+                    //txm进程已准备好输入新数据               
                     ready_reg <= #1 1'b1; 
                 end
             end
 
             FSM_START: begin
-                // go to timer, set next step
+                // 转到计时器，设置下一步
                 SCCB_FSM_state <= #1 FSM_TIMER;
                 FSM_return_state <= #1 FSM_LOAD;
                 timer <= #1 (INPUT_CLK_FREQ / (4*SCCB_FREQ));
-                // SCCB Start singal: SIO_C high, SIO_D low
+                // SCCB启动信号：SIO_C高，SIO_D低
                 SIOC_reg <= #1 1'b1; // high
                 SIOD_reg <= #1 1'b0; // low 
             end
 
             FSM_LOAD: begin            
-                // if finish 3 type data txm, go to END step
-                // else go to transmit step
+                //如果完成3类型的数据txm，则转到END步骤
+                //否则转到传输步骤
                 SCCB_FSM_state <= #1 (byte_counter == 3) ? FSM_END_PROC1 : FSM_TXM1;
                 byte_counter <= #1 byte_counter + 1;
                 bit_index <= #1 0; // inital counter for txm bit number
-                // In order to transmit 3 phases
-                // load txm data sequence
-                // 0: HW Address
-                // 1: sub address
-                // 2: setting data
+                //为了传输3个相位
+                //加载txm数据序列
+                //0:硬件地址
+                //1：子地址
+                //2：设置数据
                 case (byte_counter)
                     0: load_txm_byte <= #1 CAMERA_ADDRESS;
                     1: load_txm_byte <= #1 sub_address_reg;

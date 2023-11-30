@@ -1,4 +1,9 @@
 `timescale 1ns / 1ps
+/*
+    该模块包含多个状态常数，通过时钟信号和延时计数器控制状态转移，
+    并根据不同状态输出控制信号，控制门锁状态、LED灯状态和蜂鸣器状态等。
+    其中还包括复位控制信号，用于在输入密码错误或者警报状态下的延时操作。
+*/
 //延时状态机
 module state_delay(
     clk1k,state_now,rst,reset,led_switch,led_change,led_ok,led_no,beep
@@ -46,7 +51,7 @@ module state_delay(
                 change_password_state_two: begin
                     reset <= 0;
                 end
-                warning_state: begin                //警报状态
+                warning_state: begin                //警报状态下的延时控制
                     if(state_count >= state_count_parameter*5) begin
                         reset <= 1;                 //延时结束输出状态机复位信号
                         state_count <= 0;

@@ -1,6 +1,6 @@
 Vivado Simulator v2021.1
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 669584d3354d485181ae3f418703ef06 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot state_mac_tb_behav xil_defaultlib.state_mac_tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 669584d3354d485181ae3f418703ef06 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot ovga_tb_behav xil_defaultlib.ovga_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -8,7 +8,26 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.state_machine
-Compiling module xil_defaultlib.state_mac_tb
+Compiling module xil_defaultlib.system_control_fsm
+Compiling module xil_defaultlib.vga_control
+Compiling module xil_defaultlib.ov7670_read
+Compiling module xil_defaultlib.ov767_setup
+Compiling module xil_defaultlib.ov7670_setup_rom
+Compiling module xil_defaultlib.sccb_communication
+Compiling module xil_defaultlib.ov7670_setup_module_top
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1(INIT=2'b01)
+Compiling module xil_defaultlib.clock_PLL_100_50_25MHz_clk_wiz
+Compiling module xil_defaultlib.clock_PLL_100_50_25MHz
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.buffer_RAM_12x131072
+Compiling module xil_defaultlib.camera_vga_display_top
+Compiling module xil_defaultlib.ovga_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot state_mac_tb_behav
+Built simulation snapshot ovga_tb_behav

@@ -1,2 +1,4 @@
 Time resolution is 1 ps
-$finish called at time : 410 ns : File "D:/Desktop/smart_password_lock/smart_password_lock.srcs/sim_1/new/state_mac_tb.v" Line 86
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module ovga_tb.camera_vga_display_top.buffer_RAM_12x131072.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.

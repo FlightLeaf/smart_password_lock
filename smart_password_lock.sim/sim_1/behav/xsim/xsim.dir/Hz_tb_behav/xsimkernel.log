@@ -1,7 +1,0 @@
-Running: xsim.dir/Hz_tb_behav/xsimk.exe -simmode gui -wdb Hz_tb_behav.wdb -simrunnum 0 -socket 7685
-Design successfully loaded
-Design Loading Memory Usage: 8376 KB (Peak: 8376 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 17040 KB (Peak: 17040 KB)
-Simulation CPU Usage: 374 ms

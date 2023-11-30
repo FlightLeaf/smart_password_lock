@@ -1,4 +1,8 @@
 `timescale 1ns / 1ps
+/*
+    密码锁的主状态机，根据输入的时钟、复位键、密码、确认按钮和修改密码按钮等信号，
+    控制密码锁的不同状态，并根据密码输入的结果进行相应的状态转换和操作。
+*/
 //主状态机
 module state_machine(
     clk,reset,password,ok,change_password,state,display_max,clear

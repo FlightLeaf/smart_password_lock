@@ -4,7 +4,7 @@ module uart_r(
     input clk,
     input wire rx,
     output reg [7:0]message,
-    output reg over=0
+    output reg over = 0 
 );                                                      
     //clk为50MHz，rx为读入的串行信号，
     //message为对应的并行信号，over的下降沿将表示读入转换完成                        

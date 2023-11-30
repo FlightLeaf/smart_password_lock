@@ -94,6 +94,7 @@ module top(
     //流水显示
     flowing_water_lamp flowing_water_lamp(clk2k,reset,state_led,led);
 
+    //视频接入模块
     camera_vga_display_top camera_vga_display_top(clk,resetc,pclk,vsync,href,D_data,testmode,vga_red,vga_green,vga_blue,vga_hsync,vga_vsync,sioc_to_ov7670,siod_to_ov7670,ov7670_xclk,ov7670_pwdn,ov7670_reset);
 
     

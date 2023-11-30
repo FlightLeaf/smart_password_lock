@@ -1,23 +1,19 @@
 `timescale 1ns/1ns
-// Purpose: 
-// control VGA read RAM address
-// if no input image, RAM is blank, therefore VGA always on
-
+//目的：
+//控制VGA读取RAM地址
+//如果没有输入图像，RAM为空，因此VGA始终打开
 module vga_control(
-    input wire sys_clk, // 100MHz
-    input wire clk25,  // 25 MHz for VGA 640X480
+    input wire sys_clk,     // 100MHz 系统时钟
+    input wire clk25,       // 25 MHz 用于 VGA 640x480 的时钟
     input wire reset,
-    input wire [11:0] ram_output_data, // RRRR_GGGG_BBBB from buffer RAM
-    input wire ready_display,  // Ready to display signal
-    // read address for buffer RAM  
-    output wire [16:0] read_RAM_address, 
-    // output wire to VGA Port    
-    output wire [3:0] vga_red, // R G B data, 4 bits  
+    input wire [11:0] ram_output_data,    // 来自缓冲 RAM 的 RRRR_GGGG_BBBB 数据
+    input wire ready_display,             // 准备显示信号
+    output wire [16:0] read_RAM_address,   // 缓冲 RAM 的读地址
+    output wire [3:0] vga_red,             // R G B 数据，4 位
     output wire [3:0] vga_green,
     output wire [3:0] vga_blue,
-    // HSYNC and VSYNC 
-    output wire vga_hsync,
-    output wire vga_vsync,
+    output wire vga_hsync,                  // 水平同步信号
+    output wire vga_vsync,                  // 垂直同步信号
     input wire testmode
 );
 
@@ -48,14 +44,14 @@ always @(posedge clk25 or negedge reset) begin
     end
     else begin
         hcount <= #1 (hcount == 799)? 0: hcount + 1;    
-        hsync_reg <= #1 (hcount >= 659 && hcount <=755)? 0 : 1;  // Hsync signal region
+        hsync_reg <= #1 (hcount >= 659 && hcount <=755)? 0 : 1;  // 水平同步信号区域
 
         if (hcount == 699)
             vcount <= #1 (vcount == 524) ? 0 : vcount + 1;
-        
+
         vsync_reg <= #1 (vcount == 494) ? 0 : 1;
 
-        // 定义视频显示器320x240区域     
+        // 定义视频显示区域 320x240
         if (hcount < 320 && vcount < 240) begin
             if (testmode) begin
                 vga_red_reg <= #1 4'b0111;
@@ -70,8 +66,8 @@ always @(posedge clk25 or negedge reset) begin
             end
         end
         else begin
-            // out of video region 320x240 or not ready to display
-            // show gray screen
+            // 超出视频区域 320x240 或未准备好显示
+            // 显示灰色屏幕
             vga_red_reg <= #1 4'b0000;
             vga_green_reg <= #1 4'b0000;
             vga_blue_reg <= #1 4'b0000; 

@@ -1,12 +1,12 @@
 `timescale 1ns/1ns
-// control OV7670 SCCB setup
-// get sub address and values from ov7670_setup_rom
-// change funcation setting sub address
-// input rom output subaddr+values -->2 output: sub addr and values 
+//控制OV7670 SCCB设置
+//从ov7670_setup_rom获取子地址和值
+//更改功能设置子地址
+//输入rom输出子地址+值-->2输出：子地址和值
 module ov767_setup 
 # (parameter INPUT_CLK_FREQ = 25000000)
 (
-input wire clk,               //  system operation clock, ex. 25MHz
+input wire clk,               //system operation clock, ex. 25MHz
 input wire reset,
 input wire SCCB_ready_signal,  // check sccb ready for work
 input wire [15:0] rom_out,   // get form ov7670 ROM database
@@ -32,15 +32,6 @@ assign rom_select = rom_select_reg;
 assign sccb_sub_address = sccb_sub_address_reg;
 assign sccb_set_data = sccb_set_data_reg;
 assign sccb_start_sign = sccb_start_sign_reg;
-
-// initial begin
-//     // set initial output values
-//     rom_select_reg = 0;  // rom select 0,1,2....
-//     done_reg = 0;
-//     sccb_sub_address_reg = 0;
-//     sccb_set_data_reg = 0;
-//     sccb_start_sign_reg = 0;  // sccb wait for start signal
-// end
 
 // define FSM Stat
 localparam FSM_IDLE = 0;
