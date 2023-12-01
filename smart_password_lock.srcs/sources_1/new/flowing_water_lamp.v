@@ -1,9 +1,13 @@
 `timescale 1ns / 1ps
 //流水输出
+/*
+流水输出模块：
+通过输入的当前状态state实现不同的流水显示，增加项目的趣味性。
+*/
 module flowing_water_lamp(
     clk2k,reset,state,led
     );
-    input clk2k;
+    input clk2k;    //模块时钟
     input reset;
     input [3:0] state;
     output reg [15:0] led;
