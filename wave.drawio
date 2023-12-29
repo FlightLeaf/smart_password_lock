@@ -1,0 +1,16 @@
+<mxfile host="65bd71144e">
+    <diagram id="ER_7f-9T7BBUGD-aqiFH" name="第 1 页">
+        <mxGraphModel dx="871" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="{&#10;    &quot;signal&quot;: [&#10;  {&quot;name&quot;: &quot;clk&quot;,       &quot;wave&quot;: &quot;p......|......&quot;},&#10;  {&quot;name&quot;: &quot;reset&quot;,     &quot;wave&quot;: &quot;0......|.1.0..&quot;},&#10;  {&quot;name&quot;: &quot;password&quot;,  &quot;wave&quot;: &quot;x3..x..|......&quot;,&quot;data&quot;:&quot;0x123456&quot;},&#10;  {&quot;name&quot;: &quot;ok&quot;,        &quot;wave&quot;: &quot;0..1.0.|......&quot;},&#10;  {&quot;name&quot;: &quot;state&quot;,     &quot;wave&quot;: &quot;4...5..|..4...&quot;,&quot;data&quot;:[&quot;in_password_state&quot;,&quot;switch_state&quot;,&quot;in_password_state&quot;]}&#10;  ]&#10;}" style="shadow=0;dashed=0;align=left;strokeWidth=1;labelBackgroundColor=#ffffff;noLabel=1;shape=mxgraph.wavedrom.abstract.timing;" vertex="1" parent="1">
+                    <mxGeometry y="310" width="760" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="{&#10;    &quot;signal&quot;: [&#10;  {&quot;name&quot;: &quot;clk&quot;,       &quot;wave&quot;: &quot;p...........|...&quot;},&#10;  {&quot;name&quot;: &quot;rx&quot;,        &quot;wave&quot;: &quot;1.0345678931|...&quot;,&quot;data&quot;:[&quot;F&quot;,&quot;F&quot;,&quot;F&quot;,&quot;F&quot;,&quot;X&quot;,&quot;X&quot;,&quot;X&quot;,&quot;X&quot;]}&#10;  ]&#10;}" style="shadow=0;dashed=0;align=left;strokeWidth=1;labelBackgroundColor=#ffffff;noLabel=1;shape=mxgraph.wavedrom.abstract.timing;" vertex="1" parent="1">
+                    <mxGeometry y="580" width="760" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

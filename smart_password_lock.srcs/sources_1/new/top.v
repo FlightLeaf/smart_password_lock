@@ -98,4 +98,5 @@ module top(
     camera_vga_display_top camera_vga_display_top(clk,resetc,pclk,vsync,href,D_data,testmode,vga_red,vga_green,vga_blue,vga_hsync,vga_vsync,sioc_to_ov7670,siod_to_ov7670,ov7670_xclk,ov7670_pwdn,ov7670_reset);
 
     
+
 endmodule

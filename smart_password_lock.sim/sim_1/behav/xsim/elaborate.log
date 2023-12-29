@@ -1,6 +1,6 @@
 Vivado Simulator v2021.1
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 669584d3354d485181ae3f418703ef06 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot ovga_tb_behav xil_defaultlib.ovga_tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 669584d3354d485181ae3f418703ef06 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_test_behav xil_defaultlib.top_test xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -8,6 +8,19 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.frequency_division
+Compiling module xil_defaultlib.eliminate_dithering
+Compiling module xil_defaultlib.frequency_1_2
+Compiling module xil_defaultlib.uart_r
+Compiling module xil_defaultlib.uart_t
+Compiling module xil_defaultlib.bluetooth
+Compiling module xil_defaultlib.bcd_view_out
+Compiling module xil_defaultlib.display_decode
+Compiling module xil_defaultlib.password_in
+Compiling module xil_defaultlib.state_machine
+Compiling module xil_defaultlib.state_delay
+Compiling module xil_defaultlib.display_output
+Compiling module xil_defaultlib.flowing_water_lamp
 Compiling module xil_defaultlib.system_control_fsm
 Compiling module xil_defaultlib.vga_control
 Compiling module xil_defaultlib.ov7670_read
@@ -28,6 +41,7 @@ Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
 Compiling module xil_defaultlib.buffer_RAM_12x131072
 Compiling module xil_defaultlib.camera_vga_display_top
-Compiling module xil_defaultlib.ovga_tb
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.top_test
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot ovga_tb_behav
+Built simulation snapshot top_test_behav

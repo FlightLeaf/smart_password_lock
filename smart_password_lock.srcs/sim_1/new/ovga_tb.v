@@ -62,7 +62,6 @@ camera_vga_display_top camera_vga_display_top(
     .ov7670_reset(ov7670_reset)
 );
 
-// generate 100MHz clock, period 10nS
 localparam clk_period = 10;
 
 always 
@@ -103,15 +102,5 @@ vsync <= 0;
 href = 1;
 D_data = 8'b1100_1010;
 end
-
-// always @(posedge test_pclk)
-// begin
-//     if (D_data < 8'b1111_1111)
-//         D_data <= D_data + 1;
-//     else
-//         D_data <= 0;
-// end
-
-
 
 endmodule
